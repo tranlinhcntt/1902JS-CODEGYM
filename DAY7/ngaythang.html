@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="m" >
+    <button onclick="doingay()">Tính số ngày</button>
+    <p id="d"></p>
+</body>
+<script>
+    function doingay() {
+        let m1 = +parseInt(document.getElementById("m").value)
+        if (m1 == 1 || m1 == 3 || m1 == 5 || m1 == 7 || m1 == 8 || m1 == 10 || m1 == 12){
+                document.getElementById("d").innerHTML= "Tháng " + m1 + " có 31 ngày"
+        } else if (m1 == 2){
+            document.getElementById("d").innerHTML= "Tháng " + m1 + " có 28 hoặc 29 ngày"
+        } else if (m1 == 4 || m1 == 6 || m1 == 9 || m1 == 11 ){
+            document.getElementById("d").innerHTML= "Tháng " + m1 + " có 30 ngày"
+        }
+    }
+
+</script>
+</html>
