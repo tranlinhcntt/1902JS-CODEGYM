@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Môn Toán</td>
+            <td><input type="text" id="t"></td>
+        </tr>
+        <tr>
+            <td>Môn Lý</td>
+            <td><input type="text" id="l"></td>
+        </tr>
+        <tr>
+            <td>Môn Hóa</td>
+            <td><input type="text" id="h"></td>
+        </tr>
+        <tr>
+            <td>Khu Vực</td>
+            <td> <select name="" id="kv">
+                <option value="0.75">KV1</option>
+                <option value="0.5">KV2-NT</option>
+                <option value="0.25">KV2</option>
+                <option value="0.25">KV3</option>
+                
+            </select>
+            <button onclick="tinhdiem()">Tính điểm</button></td>            
+        </tr>
+        <tr>
+            <td></td>
+            <td><p id="kq"></p></td>
+        </tr>
+    </table>
+    
+   
+   
+</body>
+<script>
+    function tinhdiem() {
+        let t = +document.getElementById("t").value;
+        let l = +document.getElementById("l").value;
+        let h = +document.getElementById("h").value;
+        let diemcong = +document.getElementById("kv").value;
+
+        let diem = t + l + h + diemcong 
+
+        document.getElementById("kq").innerHTML =  "Tổng Điểm là : " + diem
+
+    }
+</script>
+</html>
