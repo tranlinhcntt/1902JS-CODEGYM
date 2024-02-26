@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính năm âm lịch</title>
+</head>
+<body>
+    <input type="text" id="duong">
+    <button onclick="tinhnamamlich()">chuyển</button>
+</body>
+<script>
+    function tinhnamamlich() {
+
+        let namduong = document.getElementById("duong").value;
+        let can = namduong % 10 
+        let chi = namduong % 12
+        let al = ""
+        switch (can) {
+            case :0 
+                al = 'Canh';
+            break;
+            case :1 
+                al = document.write("Tân");
+            break;
+            case :2 
+                al = document.write("Nhâm");
+            break;
+            case :3 
+                al = document.write("Quý");
+            break;
+            case :4 
+                al = document.write("Giáp");
+            break;
+            case :5 
+                al = document.write("Giáp");
+            break;
+
+        }
+       
+    }
+</script>
+</html>

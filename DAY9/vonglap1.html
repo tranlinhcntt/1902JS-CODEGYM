@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<input type="text" id="x">
+<input type="text" id="y">
+<button onclick="matran()">Thực Hiện</button>
+
+<script>
+    function matran(){
+        let x= document.getElementById('x').value;
+        let y= document.getElementById('y').value;
+        let s = "<table border='1' width= '200' cellspacing='0' cellpadding='3'>"
+        for(i =1 ; i<=x;i++){
+        s += "<tr>"
+            for(j=1; j<=y;j++) {
+                s += "<td>" + i * j+ "</td>"
+
+            }
+            s += "</tr>"
+    }
+    s += "</table>"
+    document.write(s)
+    }
+    
+</script>
+</html>

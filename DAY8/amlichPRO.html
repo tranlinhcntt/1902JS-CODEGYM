@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="mt-5 mb-3">Chuyển Dương Lịch sang Âm Lịch</h2>
+      <div class="input-group mb-2">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Nhập năm dương lịch"
+        />
+        <div class="input-group-append">
+          <button class="btn btn-primary">Chuyển</button>
+        </div>
+      </div>
+      <p id="result1"></p>
+      <p id="result2"></p>
+    </div>
+  </body>
+  <script>
+    const ipnElement = document.querySelector("input");
+    const btnElement = document.querySelector("button");
+    const resultElement1 = document.querySelector("#result1");
+    const resultElement2 = document.querySelector("#result2");
+    const danh_sach_can = [
+      "Canh",
+      "Tân",
+      "Nhâm",
+      "Quý",
+      "Giáp",
+      "Ất",
+      "Bính",
+      "Đinh",
+      "Mậu",
+      "Kỷ",
+    ];
+    const danh_sach_chi = [
+      "Thân",
+      "Dậu",
+      "Tuất",
+      "Hợi",
+      "Tí",
+      "Sửu",
+      "Dần",
+      "Mão",
+      "Thìn",
+      "Tỵ",
+      "Ngọ",
+      "Mùi",
+    ];
+
+    function convertYear(solarYear) {
+      if (solarYear < 0) return "Năm Dương Lịch phải lớn hơn 0";
+      if (Number.isNaN(solarYear))
+        return "Năm Dương Lịch không đúng định dạng, vui lòng nhập lại";
+
+      let can = "Không";
+      if (solarYear % 10 >= 0 && solarYear % 10 <= 9) {
+        can = danh_sach_can[solarYear % 10];
+      }
+
+      let chi = "Biết";
+      if (solarYear % 12 >= 0 && solarYear % 12 <= 11) {
+        chi = danh_sach_chi[solarYear % 12];
+      }
+      return `${can} ${chi}`;
+    }
+
+    btnElement.addEventListener("click", function () {
+      resultElement1.innerHTML = `Năm dương lịch: <b>${ipnElement.value}</b>`;
+      resultElement2.innerHTML = `Năm âm lịch: <b>${convertYear(
+        Number(ipnElement.value)
+      )}</b>`;
+    });
+  </script>
+</html>
