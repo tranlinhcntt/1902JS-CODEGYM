@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <!-- <input type="text" id="a">
+  <input type="text" id="b">
+  <button onclick="m1()">ấn</button> -->
+    
+    <script>
+        //   // vòng lặp ==> giúp thực hiện các công việc lặp lại 1 cách ngắn gọn
+        //   let dem = 0
+        //   while (dem < 1000 ) {
+        //     document.write("hello <br>")            
+        //     dem += 1
+        //   }
+
+//---------------------------------------------------
+        //   let x = 1
+        //   while (x < 1000 ) {
+        //     document.write(x + "<br>")            
+        //     x ++
+        //   }
+//-----------------------------------------------------------------------
+          //vidu : nhập vào a,b in ra các số từ a đến b
+          //   function m1(){
+          //       let a = document.getElementById('a').value;
+          //       let b = document.getElementById('b').value;
+          //       dem = a
+          //       while (dem <= b) {
+          //           document.write(dem + "<br>" )
+          //       dem ++;
+          //       }
+                
+          //   }
+          // let 
+
+//-------------------------------------------------------------------
+
+ // nhập vào a và b in ra các số chẵn từ a đến b
+
+//  let a = +prompt('nhập vào a: ')
+//  let b = +prompt('nhập vào b: ')
+//  let dem = a;
+//  while (dem <= b) {
+//   if(dem %2 ==0 ) {
+//   document.write(dem + "<br>" )        
+//  }
+//  dem ++;
+// }
+
+// 1/ nhập vào a,b in chẵn trong h1 và lẻ trong h2-----------
+// 2/ nhập vào a,b tính tích các số từ a đến b-----
+// 3/ nhập vào a,b,c in ra các số chẵn lớn hơn c từ a đến b--------
+
+//1/ 
+// let a = +prompt('nhập vào a: ')
+//  let b = +prompt('nhập vào b: ')
+//  let dem = a;
+//  while (dem <= b) {
+//   if(dem %2 ==0 ) {
+//     document.write("<h1>" + dem + "</h1>")     
+//  } else {
+//   document.write("<h2>" + dem + "</h2>") 
+//  }  
+//  dem ++;
+// }
+
+
+//2----------
+// let a = +prompt('nhập vào a: ')
+//  let b = +prompt('nhập vào b: ')
+//  let c = +prompt('nhập vào c: ')
+//  for( let i = a ; i <= b ; i++)
+//   if(i % 2 == 0 && i > c ) {
+//     document.write(i + "<br>" )   
+//   }
+  
+  //3 --------------------
+
+  let a = +prompt('nhập vào a: ')
+  let b = +prompt('nhập vào b: ')
+  let tich = 1
+  for( let i = a ; i <= b ; i++){11
+  tich = tich * i     
+  }
+  document.write( "Tích hai số từ " + `${a}` + " đến " + `${b}` +  " là: " + tich )  
+
+
+    </script>
+</body>
+</html>
