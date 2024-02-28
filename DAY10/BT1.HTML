@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // // 1. tính tích các số chẵn từ a đến b
+
+    // let a = +prompt("nhập vào a: ");
+    // let b = +prompt("nhập vào b: ");
+    // let tich = 1;
+    // for (let i = a; i <= b; i++) {
+    //   if( i %2 == 0)
+    //   tich = tich * i;
+    // }
+    // document.write(
+    //   "Tích hai số từ " + `${a}` + " đến " + `${b}` + " là: " + tich
+    // );
+
+    // // 2 tính tổng các số chia hết cho 3 và lớn hơn 2
+    // //----------------------------------------------------------------
+
+    // let c = +prompt("nhập vào c: ");
+    // let d = +prompt("nhập vào d: ");
+    // let tong = 0;
+    // for (let i = c; i <= d; i++) {
+    //   if( i %3 == 0 && i > 2){
+    //     tong = tong + i;
+    //   }
+
+    // }
+    // document.write(
+    //   "Tổng hai số từ " + `${c}` + " đến " + `${d}` + " là: " + tong
+    // );
+
+    //3 Đếm số lượng chia hết cho 3
+
+    // let e = +prompt("nhập vào e: ");
+    // let f = +prompt("nhập vào f: ");
+    // let dem = 0;
+    // for (let i = e; i <= f; i++) {
+    //   if( i %3 === 0 ){
+    //     dem++
+    //   }
+
+    // }
+    // document.write("số lượng chia hết cho 3 trong khoảng từ " + `${e}` + " đến " + `${f}` + " là: " + dem );
+
+    // 4 nhập vào x kiểm tra có phải số nguyên tố không
+
+    // let x = +prompt("nhập vào x: ");
+    // if( x <= 1) {
+    //     alert(`${x}` + " không phải là số nguyên tố  ")
+
+    // }
+    // for (let i = 2; i <= Math.sqrt(x) ; i++) {
+    //     if( x%i === 0 ) {
+    //         alert(`${x}` + " không phải là số nguyên tố ")
+
+    //     }
+    // }
+    // // alert(`${x}` + " là số nguyên tố ")
+
+    //     let x = +prompt("nhập vào x: ");
+    //     let kq = " là số nguyên tố "
+    //     for( let i = 2 ; i < x; i++) {
+    //         if(x % i == 0){
+    //             kq = 'không là số nguyên tố'
+    //         }
+    //     }
+    // console.log(kq);
+
+    //--------------------------------------------------------------------------
+    // in ra các số từ 1- 100 , nếu chia hết cho 3 thì in ra Fizz , 5 thì Buzz thay vì in ra số đó. và nếu chia hét cho cả 3 và 5 thì in ra chữ FizzBuzz
+
+    let a = +prompt("nhập vào a: ");
+    let b = +prompt("nhập vào b: ");
+    for (let i = a; i <= b; i++) {
+      if (i % 3 == 0 && i % 5 !== 0) {
+        document.write("Fizz");
+      }
+      if (i % 5 == 0 && i % 3 !== 0) {
+        document.write("Buzz");
+      }
+      if (i % 3 == 0 && i % 5 == 0) {
+        document.write("FizzBuzz");
+      }
+      if (i % 3 !== 0 && i % 5 !== 0) {
+        document.write(i);
+      }
+      document.write("<br>");
+    }
+  </script>
+</html>
