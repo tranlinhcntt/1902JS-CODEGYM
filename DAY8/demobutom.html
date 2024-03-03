@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lấy Giá Trị từ Button</title>
+</head>
+<body>
+    <div id="a" ></div>   
+    <button id="so1" value="1">Click me</button>
+    <button id="so2" value="2">Click me</button>
+
+    <script>
+        document.getElementById("so1").addEventListener("click", function() {
+            let buttonValue = this.value;
+            document.getElementById('a').innerHTML =  buttonValue
+          
+        });
+        document.getElementById("so2").addEventListener("click", function() {
+            let buttonValue = this.value;
+            document.getElementById('a').innerHTML =  buttonValue
+          
+        });
+
+        
+
+    </script>
+</body>
+</html>

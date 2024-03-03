@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        button {
+            color: blue;
+            font-size: 20px;
+        }
+      #container {
+        width: 380px;
+        height: 350px;
+        border: 5px solid black;
+      }
+      #kq {
+        width: 350px;
+        height: 50px;
+        border: 1px solid grey;
+        margin: 10px;
+        text-align: right;
+        font-size: 45px;
+        font-family: sans-serif;
+        padding-right: 5px;
+      }
+      #so1 {
+        width: 50px;
+        height: 50px;
+        margin-left: 30px;
+      }
+      #so2 {
+        width: 50px;
+        height: 50px;
+        margin-left: 30px;
+      }
+      #so3 {
+        width: 50px;
+        height: 50px;
+        margin-left: 30px;
+      }
+      #cong {
+        width: 50px;
+        height: 50px;
+        margin-left: 30px;
+      }
+      #so4 {
+        width: 50px;
+        height: 50px;
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+      #so5 {
+        width: 50px;
+        height: 50px;
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+      #so6 {
+        width: 50px;
+        height: 50px;
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+      #tru {
+        width: 50px;
+        height: 50px;
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+      #so7 {
+        width: 50px;
+        height: 50px;
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+      #so8 {
+        width: 50px;
+        height: 50px;
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+      #so9 {
+        width: 50px;
+        height: 50px;
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+      #nhan {
+        width: 50px;
+        height: 50px;
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+      #xoa {
+        width: 50px;
+        height: 50px;
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+      #so0 {
+        width: 50px;
+        height: 50px;
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+      #bang {
+        width: 50px;
+        height: 50px;
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+      #chia {
+        width: 50px;
+        height: 50px;
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="kq"></div>
+      <button id="so1" value="1">1</button>
+      <button id="so2" value="2">2</button>
+      <button id="so3" value="3">3</button>
+      <button id="cong">+</button>
+      <button id="so4" value="4">4</button>
+      <button id="so5" value="5">5</button>
+      <button id="so6" value="6">6</button>
+      <button id="tru">-</button>
+      <button id="so7" value="7">7</button>
+      <button id="so8" value="8">8</button>
+      <button id="so9" value="9">9</button>
+      <button id="nhan">x</button>
+      <button id="xoa" onclick="clearResult()">C</button>
+      <button id="so0" value="0">0</button>
+      <button id="bang">=</button>
+      <button id="chia">/</button>
+    </div>
+  </body>
+  <script>
+    document.getElementById("so1").addEventListener("click", function () {
+      let buttonValue = this.value;
+      document.getElementById("kq").innerHTML = buttonValue;
+    });
+    document.getElementById("so2").addEventListener("click", function () {
+      let buttonValue = this.value;
+      document.getElementById("kq").innerHTML = buttonValue;
+    });
+    document.getElementById("so3").addEventListener("click", function () {
+      let buttonValue = this.value;
+      document.getElementById("kq").innerHTML = buttonValue;
+    });
+    document.getElementById("so4").addEventListener("click", function () {
+      let buttonValue = this.value;
+      document.getElementById("kq").innerHTML = buttonValue;
+    });
+    document.getElementById("so5").addEventListener("click", function () {
+      let buttonValue = this.value;
+      document.getElementById("kq").innerHTML = buttonValue;
+    });
+    document.getElementById("so6").addEventListener("click", function () {
+      let buttonValue = this.value;
+      document.getElementById("kq").innerHTML = buttonValue;
+    });
+    document.getElementById("so7").addEventListener("click", function () {
+      let buttonValue = this.value;
+      document.getElementById("kq").innerHTML = buttonValue;
+    });
+    document.getElementById("so8").addEventListener("click", function () {
+      let buttonValue = this.value;
+      document.getElementById("kq").innerHTML = buttonValue;
+    });
+    document.getElementById("so9").addEventListener("click", function () {
+      let buttonValue = this.value;
+      document.getElementById("kq").innerHTML = buttonValue;
+    });
+    document.getElementById("so0").addEventListener("click", function () {
+      let buttonValue = this.value;
+      document.getElementById("kq").innerHTML = buttonValue;
+    });
+   
+
+    function clearResult() {
+            document.getElementById("kq").value = "";
+        }
+  </script>
+</html>

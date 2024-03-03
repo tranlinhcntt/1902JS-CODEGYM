@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Máy Tính Bỏ Túi</title>
+<style>
+    input[type="button"] {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        margin: 5px;
+    }
+</style>
+</head>
+<body>
+    <h2>Máy Tính Bỏ Túi</h2>
+    <label for="result">Kết Quả:</label>
+    <input type="text" id="result" disabled><br><br>
+    <input type="button" value="1" onclick="addToResult('1')">
+    <input type="button" value="2" onclick="addToResult('2')">
+    <input type="button" value="3" onclick="addToResult('3')">
+    <input type="button" value="+" onclick="addToResult('+')"><br>
+    <input type="button" value="4" onclick="addToResult('4')">
+    <input type="button" value="5" onclick="addToResult('5')">
+    <input type="button" value="6" onclick="addToResult('6')">
+    <input type="button" value="-" onclick="addToResult('-')"><br>
+    <input type="button" value="7" onclick="addToResult('7')">
+    <input type="button" value="8" onclick="addToResult('8')">
+    <input type="button" value="9" onclick="addToResult('9')">
+    <input type="button" value="*" onclick="addToResult('*')"><br>
+    <input type="button" value="C" onclick="clearResult()">
+    <input type="button" value="0" onclick="addToResult('0')">
+    <input type="button" value="/" onclick="addToResult('/')">
+    <input type="button" value="=" onclick="calculateResult()"><br>
+
+    <script>
+        function addToResult(value) {
+            document.getElementById("result").value += value;
+        }
+
+        function clearResult() {
+            document.getElementById("result").value = "";
+        }
+
+        function calculateResult() {
+            let expression = document.getElementById("result").value;
+            let result;
+
+            try {
+                result = eval(expression);
+            } catch (error) {
+                result = "Lỗi";
+            }
+
+            document.getElementById("result").value = result;
+        }
+    </script>
+</body>
+</html>
