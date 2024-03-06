@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // Mảng - là  1 biến đặc biệt - nó có thể lưu trữ nhiều giá trị bên trong cú pháp. 
+    // mảng quản lý theo vị trí và bắt đầu từ 0 
+    // truy xuất phần tử ; xyz[5] = "HaHa"
+    //  số lượng phần tử : xyz.length = 6 
+    // duyệt mảng : 
+    // for(let i = 0; i < zyz.length; i++) {
+    //     document.write(xyz[i] + '')
+    // } 
+    
+// tạo mảng và duyệt mảng in ra phần tử thứ i trong mảng khi vòng for chạy 
+
+    let xyz = [3,4,5,9,33,27]
+
+
+    // alert(xyz[3])
+    // for(let i = 0 ; i < xyz.length;i++ ) {
+    //     document.write(xyz[i] + ' ')
+    // }
+
+    // // in ra các phần tử chẵn trong mảng 
+    // for(let i = 0 ; i < xyz.length;i++ ) {
+    //     if(xyz[i] % 2 == 0) {
+    //         document.write(xyz[i] + ' ')
+    //     }
+        
+    // }
+//----------------------------------------------------------------
+    // // in ra các phần tử trong mảng, chẵn thì trong thẻ p, lẻ thì trong thẻ h3
+
+    // for(let i = 0 ; i < xyz.length ;i++ ) {
+    //     if(xyz[i] % 2 == 0) {
+    //         document.write('<p>' + xyz[i] + '</p>')
+    //     } if (xyz[i] % 2 != 0) {
+    //         document.write('<h3>' +  xyz[i] + '</h3> ')
+    //     }
+        
+    // }
+//--------------------------------------------------------------------
+    // in ra các phần tử tại vị trí chẵn 
+
+    // for(let i = 0 ; i < xyz.length ;i++ ) {
+    //     if(i % 2 == 0) {
+    //         document.write('<p>' + xyz[i] + '</p>')
+    //     }
+    // }
+//-----------------------------------------------------------------
+    // in ra tổng các phần tử > 20 
+    // let tong = 0
+    // for(let i = 0 ; i < xyz.length ;i++ ) {
+    //     if(xyz[i] > 20 ) {
+    //         tong += xyz[i]
+           
+    //     }
+    // }
+    // document.write('<p>' + tong + '</p>')
+//---------------------------------------------------------------------------
+
+// in ra trung bình cộng các phần tử chia hết cho 3 trong mảng 
+
+// let tong = 0
+//         dem = 0
+//     for(let i = 0 ; i < xyz.length ;i++ ) {
+//         if(xyz[i]%3 == 0 ) {
+//             tong += xyz[i]
+//            dem++          
+//         }
+//     }
+//     document.write('<p>' + tong/dem + '</p>')
+//------------------------------------------------------------------------
+
+    // tìm giá trị lớn nhất trong mảng 
+
+    let A = xyz[0]
+    for(let i = 0; i < xyz.length; i++) {
+        if( A < xyz[i]) {
+            A = xyz[i]
+        }
+    }
+    document.write(A)
+//--------------------------------------------------------------------------
+
+
+</script>
+</html>
