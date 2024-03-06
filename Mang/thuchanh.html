@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="name" placeholder="nhập vào tên">
+    <button onclick="them()">thêm</button>
+  </body>
+  <script>
+
+    function them() {
+
+
+    // thêm 2 phần tử vào mảng 
+    
+
+    // let array = [
+    //   {
+    //     id: 1,
+    //     name: "",
+    //     address: "Nghệ An",
+    //   },
+    //   {
+    //     id: 2,
+    //     name: "Nguyễn Thanh Toàn",
+    //     address: "Tp Vinh",
+    //   }
+    // ]
+    // console.log(array)
+    let themmang = [1,2,3,5]
+    themmang.push(document.getElementById('name').value)
+    console.log(themmang)
+    
+    // for( let i=0 ; i < array.length;i++) {
+    //     if( array[i].id == 2 ) {
+    //         array.splice(i,1)
+    //     }       
+    // }
+    // console.log(array)
+}
+    
+  </script>
+</html>
