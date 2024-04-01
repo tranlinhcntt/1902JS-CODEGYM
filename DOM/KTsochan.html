@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>nhập số</p>
+    <input type="text" id="so">
+    <button onclick="kiemtra()">kiểm tra</button>
+    <p id="kq"></p>
+</body>
+<script>
+    function kiemtra() {
+        let chan = document.getElementById('so').value
+        if ( chan %2 == 0 ) {
+            alert(" là một số chẵn") 
+        } else 
+        alert("không phải là số chẵn")
+    }
+</script>
+</html>
