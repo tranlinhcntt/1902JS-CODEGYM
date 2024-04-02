@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Funny Keyboard Typing</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      #fixedText {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Funny Keyboard Typing</h1>
+    <p>hãy nhập vào bàn phím !!</p>
+    <p id="fixedText"></p>
+
+    <script>
+      let fixedTextElement = document.getElementById("fixedText")
+      let fixedText = "Một ứng dụng ngớ ngẩn !! "
+      let currentIndex = 0
+      document.addEventListener("keypress", function () {
+        fixedTextElement.textContent += fixedText[currentIndex]
+        currentIndex = (currentIndex + 1) % fixedText.length
+      })
+    </script>
+  </body>
+</html>
