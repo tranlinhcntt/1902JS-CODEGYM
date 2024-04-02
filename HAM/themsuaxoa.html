@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Management App</title>
+</head>
+<body>
+<h1>Product Management App</h1>
+
+<!-- Form để thêm sản phẩm mới -->
+<form id="addForm">
+    <input type="text" id="productName" placeholder="Tên sản phẩm" required>
+    <button type="submit">Thêm sản phẩm</button>
+</form>
+
+<!-- Danh sách sản phẩm -->
+<ul id="productList"></ul>
+
+<script>
+    // Mảng để lưu trữ danh sách sản phẩm
+var products = [];
+
+// Function để hiển thị danh sách sản phẩm
+function displayProducts() {
+    var productList = document.getElementById("productList");
+    productList.innerHTML = ""; // Xóa nội dung cũ trước khi hiển thị danh sách mới
+    products.forEach(function(product, index) {
+        var listItem = document.createElement("p" );
+        listItem.textContent = product;
+        // Tạo nút để xoá sản phẩm khi click
+        var deleteButton = document.createElement("button");
+        deleteButton.textContent = "Xoá";
+        deleteButton.onclick = function() {
+            deleteProduct(index);
+        };
+        listItem.appendChild(deleteButton);
+        productList.appendChild(listItem);
+    });
+}
+
+// Function để thêm sản phẩm mới vào danh sách
+function addProduct(productName) {
+    products.push(productName);
+    displayProducts(); // Hiển thị danh sách mới
+}
+
+// Function để xoá một sản phẩm khỏi danh sách
+function deleteProduct(index) {
+    products.splice(index, 1);
+    displayProducts(); // Hiển thị danh sách mới
+}
+
+// Bắt đầu bằng việc hiển thị danh sách ban đầu (nếu có)
+displayProducts();
+
+// Bắt sự kiện submit của form để thêm sản phẩm mới
+document.getElementById("addForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Ngăn chặn việc tải lại trang khi submit form
+    var productNameInput = document.getElementById("productName");
+    var productName = productNameInput.value.trim(); // Lấy tên sản phẩm và loại bỏ các khoảng trắng thừa
+    if (productName !== "") {
+        addProduct(productName);
+        productNameInput.value = ""; // Xóa nội dung trong input
+    } else {
+        alert("Vui lòng nhập tên sản phẩm!");
+    }
+});
+
+</script>
+</body>
+</html>
