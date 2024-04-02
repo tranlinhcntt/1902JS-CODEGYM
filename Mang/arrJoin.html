@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+// // bài tập 1 : Viết một chương trình Javascript để nối tất cả các phần tử trong một mảng chuỗi lại với nhau. Ví dụ có mảng chuỗi như sau: myColor = [“Red”, “Green”, “White”, “Black”];
+// Sau khi thực thi chương trình sẽ trả về dạng như sau :  “Red,Green,White,Black”
+
+    let myColor = ["Red", "Green", "White", "Black"];
+
+    // Hàm để nối các phần tử của mảng thành một chuỗi
+    function concatenateArray(arr) {
+      return arr.join(",");
+    }
+    console.log(concatenateArray(myColor));
+
+    // Bài tập 2:
+
+    let input = prompt("Nhập một số: ");
+
+    function chenDau(num) {
+    // Chuyển số nhập vào thành một mảng các chữ số
+    let digits = num.toString().split("");
+    let result = [];
+
+    // Lặp qua từng chữ số trong mảng
+    for (var i = 0; i < digits.length; i++) {
+        // Chuyển đổi chữ số từ chuỗi thành số nguyên
+        var digit = parseInt(digits[i]);
+
+        // Kiểm tra nếu chữ số hiện tại và chữ số kế tiếp đều chẵn
+        if (digit % 2 === 0 && parseInt(digits[i + 1]) % 2 === 0) {
+            // Thêm chữ số hiện tại vào kết quả
+            result.push(digit);
+            // Thêm dấu "-" vào kết quả
+            result.push("-");
+        } else {
+          result.push(digit);
+        }
+    }
+  
+    return result.join("").replace(/-$/, "");
+}
+console.log(chenDau(input));
+  </script>
+</html>
