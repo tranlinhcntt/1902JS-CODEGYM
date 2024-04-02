@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #gameboard {
+        position: relative;
+      }
+
+      .cell {
+        position: absolute;
+        border: 1px solid blue;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        font-size: 20pt;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="gameboard">
+      <!-- <div class="cell" style="left: 20px; top: 20;">X</div>
+        <div class="cell" style="left: 70px; top: 20;">O</div>
+        <div class="cell" style="left: 120px; top: 20;"></div> -->
+    </div>
+    <script>
+      const ROW_COUNT = 10;
+      const COLUMN_COUNT = 20;
+      const DISTANCE = 10;
+      const CELL_SIZE = 40;
+      const CELL_VALUE_DEFAULT = "";
+      const CELL_VALUE_X = "X";
+      const CELL_VALUE_O = "O";
+
+      class Cell {
+        constructor(rIdx, cIdx) {
+          this.rowIndex = rIdx;
+          this.colIndex = cIdx;
+          this.value = CELL_VALUE_DEFAULT;
+        }
+
+        getCellHtml = function () {
+          let leftDistance = DISTANCE + this.colIndex * CELL_SIZE;
+          let topDistance = DISTANCE + this.rowIndex * CELL_SIZE;
+          return `<div id="cell_${this.rowIndex}_${this.colIndex}" class="cell" style="left: ${leftDistance}px; top: ${topDistance}px;">${this.value}</div>`;
+        };
+      }
+
+      let banCo = document.getElementById("gameboard");
+      banCo.innerHTML = "";
+      for (let iR = 0; iR < ROW_COUNT; iR++) {
+        for (let idx = 0; idx < COLUMN_COUNT; idx++) {
+          let newCell = new Cell(iR, idx);
+          banCo.innerHTML += newCell.getCellHtml();
+        }
+      }
+    </script>
+  </body>
+</html>
