@@ -1,0 +1,234 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300&display=swap');
+html, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+}
+main {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+/* navbar */
+#navbar-product {
+    background-color: #042688;
+    width: 100%;
+    height: 60px;   
+    box-shadow: #333;        
+}
+#navbar-product ul {
+    display: flex;
+    justify-items: center;
+}
+#head-container li a {
+    width: 100px;
+    height: 25px;      
+    border: none;   
+    font-size: 13px;      
+    color: #042688;  
+    border-radius: 3px;
+    text-align: center;
+    font-weight: bold;
+}
+#head-container a:hover , .btn-dangnhap a:hover {    
+    transition: 0.5s;
+}
+.input-group span i a {
+    text-decoration: none;
+}
+.navbar-brand {
+    padding-left: 5%;   
+}
+.input-group {
+    padding-right: 50px;
+}
+#head-container ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+#head-container ul li{
+    display: flex;
+    margin: 5px;
+}
+#head-container ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+#navbarcontainer{
+    background-color: #042688;
+}
+.logo {
+    width: 150px;
+}
+
+/* start effect nemu */
+.nav-item {
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;    
+}
+.nav-item a:hover {
+    color: #f3bb06;       
+}
+.nav-item a {
+    position: relative;
+    color: #fff;
+}
+.nav-item a::after {
+    content: "";
+    height: 5px;
+    width: 0;   
+    background: #f3bb06;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 0.5s ease-in-out;
+}
+.nav-item a:hover::after {
+    width: 50%;
+    transform: translateX(100%);
+}
+/* effect menu end */
+
+
+
+/* footer */
+footer {
+    background: #042688;
+    margin-top: 15px;
+    padding-top: 15px;
+}
+
+.footer-widgets {
+    margin-left: 100px;
+    color: #fff;
+}
+#block_widget-22 a {
+    text-decoration: none;
+    color: #fff
+}
+.widgetlight {
+    padding: 0;
+    margin: 0;
+}
+#block_widget-30 a {
+    text-decoration: none;
+    color: #fff;
+}
+/* product-detail  */
+.pro-con-deital:hover {
+    width: 200%;
+}
+
+.buttons_added {
+    opacity:1;
+    display:inline-block;
+    display:-ms-inline-flexbox;
+    display:inline-flex;
+    white-space:nowrap;
+    vertical-align:top;
+}
+.is-form {
+    overflow:hidden;
+    position:relative;
+    background-color:#f9f9f9;
+    height:2.2rem;
+    width:1.9rem;
+    padding:0;
+    text-shadow:1px 1px 1px #fff;
+    border:1px solid #ddd;
+}
+.is-form:focus,.input-text:focus {
+    outline:none;
+}
+.is-form.minus {
+    border-radius:4px 0 0 4px;
+}
+.is-form.plus {
+    border-radius:0 4px 4px 0;
+}
+.input-qty {
+    background-color:#fff;
+    height:2.2rem;
+    text-align:center;
+    font-size:1rem;
+    display:inline-block;
+    vertical-align:top;
+    margin:0;
+    border-top:1px solid #ddd;
+    border-bottom:1px solid #ddd;
+    border-left:0;
+    border-right:0;
+    padding:0;
+}
+.input-qty::-webkit-outer-spin-button,.input-qty::-webkit-inner-spin-button {
+    -webkit-appearance:none;
+    margin:0;
+}
+
+
+/* javascript  */
+
+#buy-amount button{
+    width: 35px;
+    height: 35px;
+    outline: none;
+    background: none;
+    border: 1px solid #6435e3;
+    cursor: pointer;
+}
+#buy-amount button:hover {
+    background-color: #6435e3;
+}
+#buy-amount button svg {
+    color: #909090;
+}
+
+#buy-amount button:hover svg {
+    color: #ffff
+}
+#buy-amount {
+    display: flex;
+}
+
+#buy-amount #amount {
+    width: 45px;
+    height: 35px;
+    text-align: center;
+    border: 1px solid #6435e3;
+    
+}
+#add {
+    width: 150px;
+    height: 36px;
+    border: 0.5px solid #6435e3;
+    border-radius: 5px;
+}
+#lcsp {
+   margin-left: 10px;
+   margin-right: 10px;
+    width: 150px;
+    height: 40px;
+    
+}
+#addBill {
+    height: 36px;
+    
+   
+}
+
+#buttons_added{
+    display: flex;
+}
+table {
+    width: 500px;
+}
+#edit1 {
+    width: 150px;
+  
+}

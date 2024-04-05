@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Cart</title>
+</head>
+<body>
+  <h1>Shopping Cart</h1>
+  <div id="product-list">
+    <div class="product">
+      <h2>Product 1</h2>
+      <button onclick="addToCart('Product 1', 10.99)">Add to Cart</button>
+      <span id="quantity-product-1">0</span>
+      <button onclick="increaseQuantity('product-1')">+</button>
+      <button onclick="decreaseQuantity('product-1')">-</button>
+    </div>
+    <div class="product">
+      <h2>Product 2</h2>
+      <button onclick="addToCart('Product 2', 5.99)">Add to Cart</button>
+      <span id="quantity-product-2">0</span>
+      <button onclick="increaseQuantity('product-2')">+</button>
+      <button onclick="decreaseQuantity('product-2')">-</button>
+    </div>
+    <!-- Add more products as needed -->
+  </div>
+  <h2>Cart</h2>
+  <ul id="cart"></ul>
+  <h2>Total: <span id="total">$0.00</span></h2>
+  
+  <script src="script.js"></script>
+</body>
+<script>
+    var cart = {}; // Object to store quantities of each product
+var prices = {}; // Object to store prices of each product
+
+// Function to add a product to the cart
+function addToCart(productName, price) {
+  if (!cart[productName]) {
+    cart[productName] = 0;
+    prices[productName] = price;
+  }
+  cart[productName]++;
+  updateCart();
+}
+
+// Function to increase quantity of a product
+function increaseQuantity(productName) {
+  cart[productName]++;
+  updateCart();
+}
+
+// Function to decrease quantity of a product
+function decreaseQuantity(productName) {
+  if (cart[productName] > 0) {
+    cart[productName]--;
+    updateCart();
+  }
+}
+
+// Function to update the cart display
+function updateCart() {
+  var cartElement = document.getElementById('cart');
+  cartElement.innerHTML = '';
+
+  var total = 0;
+
+  for (var product in cart) {
+    var quantity = cart[product];
+    var price = prices[product];
+    var totalProductPrice = quantity * price;
+
+    if (quantity > 0) {
+      var cartItem = document.createElement('li');
+      cartItem.textContent = product + ' x' + quantity + ' - $' + totalProductPrice.toFixed(2);
+      cartElement.appendChild(cartItem);
+      total += totalProductPrice;
+    }
+  }
+
+  var totalElement = document.getElementById('total');
+  totalElement.textContent = '$' + total.toFixed(2);
+}
+
+</script>
+</html>
+ 
