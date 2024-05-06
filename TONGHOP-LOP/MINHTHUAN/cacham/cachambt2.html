@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // nhập vào các phần tử của mảng cho đến khi nhập -1 thì dừng.
+        // in ra mỗi phần tử 1 dòng
+        let arr = [];
+        let x;
+        for (let i = 0; x != -1; i++) {
+            x = +prompt('nhập vào phần tử thứ ' + i);
+            arr.push(x);
+        }
+        for (let i = 0; i < arr.length; i++) {
+            document.write(arr[i] + "<br>");
+        }
+    </script>
+</body>
+
+</html>

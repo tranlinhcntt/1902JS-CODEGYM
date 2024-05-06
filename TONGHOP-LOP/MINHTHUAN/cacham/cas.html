@@ -1,0 +1,239 @@
+!
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <h3>Quản Lý Sản Phẩm</h3>
+                <div style="display: flex;">
+                    <input style="width: 150px;" onkeyup="enterinput(event)" class="form-control me-2" id="searchInput" placeholder="Search" aria-label="Search">
+                    <button id="searchButton" onclick="searchpro()" class="btn btn-outline-success">Search</button>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div style="display: flex;width: 100%;" id="main">
+        <div style="width: 20%;border: 1px solid;" id="main-left">
+            <button style="border: none;width: 100%;background-color: antiquewhite;" onclick="showlist()">Dashbroad</button><br>
+            <button style="border: none;width: 100%;background-color: antiquewhite;" onclick="showpro()">Danh Sách Sản Phẩm</button><br>
+            <button style="border: none;width: 100%;background-color: antiquewhite;" onclick="showuser()">Danh Sách người Dùng</button><br>
+            <button style="border: none;width: 100%;background-color: antiquewhite;" onclick="showloc()">Danh Sách Vị Trí sử dụng</button><br>
+            <button style="border: none;width: 100%;background-color: antiquewhite;" onclick="showadd()">Tạo Mới Dữ Liệu</button><br>
+        </div>
+        <div style="width: 80%;border: 1px solid;" id="main-right">
+        </div>
+    </div>
+    <div id="footer" style="position: fixed;left: 0;bottom: 0;width: 100%;background-color: beige;">
+        <p style="margin-left: 10%;margin-top: 5px;">design by J/A</p>
+    </div>
+    <script>
+        let listpro = [{
+            id: 1,
+            name: 'Ngọc Hưng',
+            pro: 'laptop Dell',
+            loc: 'Hà Nội'
+        }, {
+            id: 2,
+            name: 'Duy Linh',
+            pro: 'desktop Acer',
+            loc: 'TPHCM'
+        }, {
+            id: 3,
+            name: 'Thuỳ Ái Nhi',
+            pro: 'ipad 8',
+            loc: 'Hà Nội'
+        }, {
+            id: 4,
+            name: 'Văn Quý',
+            pro: 'ipad 10',
+            loc: 'Quảng Bình'
+        }, {
+            id: 5,
+            name: 'Xuân Sơn',
+            pro: 'iphone 16',
+            loc: 'Hà Nội'
+        }, {
+            id: 6,
+            name: 'Ngọc Hưng',
+            pro: 'laptop dell',
+            loc: 'TPHCM'
+        }, {
+            id: 7,
+            name: 'Minh Chính',
+            pro: 'laptop HP',
+            loc: 'Thái Nguyên'
+        }, {
+            id: 8,
+            name: 'Hậu Phương',
+            pro: 'laptop dell',
+            loc: 'Hà Nội'
+        }, {
+            id: 9,
+            name: 'Thị Mến',
+            pro: 'Iphone 13',
+            loc: 'Lào Cai'
+        }, {
+            id: 10,
+            name: 'Minh Hiền',
+            pro: 'laptop dell',
+            loc: 'TPHCM'
+        }, {
+            id: 11,
+            name: 'Thị Khánh Vy',
+            pro: 'desktop Acer',
+            loc: 'Cao Bằng'
+        }, {
+            id: 12,
+            name: 'Việt Anh',
+            pro: 'laptop dell',
+            loc: 'Hà Nội'
+        }, {
+            id: 13,
+            name: 'Văn Hoàng',
+            pro: 'macbook',
+            loc: 'Hải Phòng'
+        }, ];
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        let searchResults = document.getElementById('main-right');
+
+        function showlist() {
+            let home = '<table style="width: 100%;background-color: antiquewhite;"><tr><th style="width: 10%;border: 1px solid;">No</th><th style="width: 25%;border: 1px solid;">Name</th><th style="width: 25%;border: 1px solid;">Production</th><th style="width: 20%;border: 1px solid;">Location</th><th style="width: 20px;border: 1px solid;">Function</th></tr></table>';
+            for (i = 0; i < listpro.length; i++) {
+
+                home += `<table style="width: 100%; background-color: antiquewhite;">
+            <tr>
+              <td style="width: 10%;border: 1px solid;"> ${listpro[i].id}</td>
+              <td style="width: 25%;border: 1px solid;"> ${listpro[i].name}</td>
+              <td style="width: 25%;border: 1px solid;"> ${listpro[i].pro}</td>
+              <td style="width: 20%;border: 1px solid;"> ${listpro[i].loc}</td>
+              <td style="width: 20%;border: 1px solid;"><button style="background-color: greenyellow" onclick="showedit(${i})">Edit</button><button style="background-color: red" onclick="delet(${i})">Delete</button></td>
+              </tr>
+            </table>`
+            }
+            document.getElementById('main-right').innerHTML = home;
+        }
+
+        function showuser() {
+            let home = '<table style="width:100%; background-color: antiquewhite;"><tr><th style="width: 20%;border: 1px solid;">No</th><th style="width: 80%;border: 1px solid;">Name</th></tr></table>';
+            for (i = 0; i < listpro.length; i++) {
+
+                home += `<table style="width: 100%;background-color: antiquewhite;">
+            <tr>
+              <td style="width: 20%;border: 1px solid;"> ${listpro[i].id}</td>
+              <td style="width: 80%;border: 1px solid;"> ${listpro[i].name}</td>
+              </tr>
+            </table>`
+            }
+            document.getElementById('main-right').innerHTML = home;
+        }
+
+        function showpro() {
+            let home = '<table style="width: 100%;background-color: antiquewhite;"><tr><th style="width: 20%;border: 1px solid;">No</th><th style="width: 80%;border: 1px solid;">Production</th></tr></table>';
+            for (i = 0; i < listpro.length; i++) {
+
+                home += `<table style="width: 100%; background-color: antiquewhite;">
+            <tr>
+              <td style="width: 20%;border: 1px solid;"> ${listpro[i].id}</td>
+              <td style="width: 80%;border: 1px solid;"> ${listpro[i].pro}</td>
+              </tr>
+            </table>`
+            }
+            document.getElementById('main-right').innerHTML = home;
+        }
+
+        function showloc() {
+            let home = '<table style="width: 100%;background-color: antiquewhite;"><tr><th style="width: 20%;border: 1px solid;">No</th><th style="width: 80%;border: 1px solid;">Location</th></tr></table>';
+            for (i = 0; i < listpro.length; i++) {
+
+                home += `<table style="width: 100%;background-color: antiquewhite;">
+            <tr>
+              <td style="width: 20%;border: 1px solid;"> ${listpro[i].id}</td>
+              <td style="width: 80%;border: 1px solid;"> ${listpro[i].loc}</td>
+              </tr>
+            </table>`
+            }
+            document.getElementById('main-right').innerHTML = home;
+        }
+
+        function showadd() {
+            let home = `<input placeholder="input ID" id="ipid"><input placeholder="Input Name" id="ipname"><input placeholder="Input Production" id="ippro"><input placeholder="input Location" id="iploc"><button onclick="add()">Create</button>`
+            document.getElementById('main-right').innerHTML = home;
+        }
+
+        function add() {
+            let addid = parseInt(document.getElementById('ipid').value);
+            let addname = document.getElementById('ipname').value;
+            let addpro = document.getElementById('ippro').value;
+            let addloc = document.getElementById('iploc').value;
+            let newproduction = {
+                id: addid,
+                name: addname,
+                pro: addpro,
+                loc: addloc
+            }
+            listpro.push(newproduction);
+            showlist();
+        }
+
+        function showedit(index) {
+            let home = `<input value="${listpro[index].id}" id="ipid1"><input value="${listpro[index].name}" id="ipname1"><input value="${listpro[index].pro}" id="ippro1"><input value="${listpro[index].loc}" id="iploc1"><button onclick="edit(${index})">Submit</button>`
+            document.getElementById('main-right').innerHTML = home;
+        }
+
+        function edit(index) {
+            listpro[index].id = document.getElementById('ipid1').value;
+            listpro[index].name = document.getElementById('ipname1').value;
+            listpro[index].pro = document.getElementById('ippro1').value;
+            listpro[index].loc = document.getElementById('iploc1').value;
+            showlist();
+        }
+
+        function delet(index) {
+            let j = index;
+            listpro.splice(j, 1);
+            showlist();
+        }
+
+        function searchpro() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const searchResultArray = listpro.filter(item => {
+                return Object.values(item).some(value =>
+                    typeof value === 'string' && value.toLowerCase().includes(searchTerm)
+                );
+            });
+            displayResults(searchResultArray);
+        }
+
+        function displayResults(results) {
+            searchResults.innerHTML = '';
+            if (results.length > 0) {
+                results.forEach(result => {
+                    const resultElement = document.createElement('div');
+                    resultElement.textContent = `ID: ${result.id}, Name: ${result.name}, Product: ${result.pro}, Location: ${result.loc}`;
+                    searchResults.appendChild(resultElement);
+                });
+            } else {
+                const noResultElement = document.createElement('div');
+                noResultElement.textContent = 'Không tìm thấy kết quả.';
+                searchResults.appendChild(noResultElement);
+            }
+        }
+
+        function enterinput(event) {
+            if (event.key === 'Enter') {
+                searchpro();
+            }
+        };
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Viết hàm sumoflistprime() nhận vào 1 số nguyên x.
+    Hàm trả về giá trị là tổng các số nguyên từ 0 tới x. -->
+    <script>
+        let x =+prompt("Moi nhap x");
+        let sum = 0;
+        if(x==0){
+            document.write("Moi nhap so nguyen khac 0")
+        }
+        if(x!=0){
+            for(let i=0; i<=x; i++){
+                sum += i;  
+            }
+        document.write("Tong cac so nguyen tu 0 toi x la: " + sum)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <!-- Chay lien tuc
+        setInterval(() => {
+        let y= document.getElementById("x")
+        y.style.left= parseInt(y.style.left) + 20 + "px";
+      }, 1000);
+      1000 la so giay (s)=> dieu chinh tuy theo y muon
+    -->
+
+    <!-- Chạy liên tục đến khi chạm giới hạn màn hình thì đập (di chuyển) ngược trở lại 
+    Gioi han ben phai:   window.innerWidth 
+    Gioi han ben tren: window.innerHeight -->
+    <img 
+    src="https://www.pngall.com/wp-content/uploads/5/Sports-Ball-Transparent.png" 
+    alt="" ;
+    id="x"
+    style="
+    height: 100px;
+    position: absolute;
+    top: 100px;
+    left: 150px;">
+<script>
+    // di cheo man hinh: speedX =1 , speedY = 1
+
+    let speedX= 0
+    let speedY= 1
+    setInterval(() => {
+        xx= document.getElementById("x")
+        xx.style.left= parseInt(xx.style.left) + speedX + "px";
+        xx.style.top= parseInt(xx.style.top) + speedY + "px";
+        if(parseInt(xx.style.left) >= window.innerWidth-150 
+        || parseInt(xx.style.left) <=0) {
+    
+        speedX= - speedX
+        }
+        if(parseInt(xx.style.top) >= window.innerHeight-150 
+        || parseInt(xx.style.top) <=0) {
+    
+        speedY= - speedY
+        }
+        }, 1);
+
+        window.addEventListener('keydown', (e) =>{
+// di sang phai
+            if(e.key=='d'){ 
+                speedX=1;
+                speedY=0;
+// di sang phai
+            }
+            if(e.key=='a'){
+                speedX=-1;
+                speedY=0;
+// di len tren
+            }
+            if(e.key=='w'){
+                speedX=0;
+                speedY=-1;
+// di xuong duoi
+            }if(e.key=='s'){
+                speedX=0;
+                speedY=1;
+            }
+        })
+</script>
+</body>
+</html>

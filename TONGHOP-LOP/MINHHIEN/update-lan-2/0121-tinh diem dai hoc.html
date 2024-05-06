@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>TINH DIEM DAI HOC KHOI D</h2>
+    <table>
+        <tr>
+            <td>MON TOAN</td>
+            <td>
+                <input onclick="" id="toan">
+            </td>
+        </tr>
+        <tr>
+            <td>MON VAN</td>
+            <td>
+                <input onclick="" id="van">
+            </td>
+        </tr>
+        <tr>
+            <td>MON ANH</td>
+            <td>
+                <input onclick="" id="anh">
+            </td>
+        </tr>
+        <tr>
+            <td>KHU VUC</td>
+            <td>
+                <select name="" id="kv">
+                    <option value="2">Khu vuc 1</option>
+                    <option value="3">Khu vuc 2</option>
+                    <option value="4">Khu vuc 3</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button onclick="tongdiem()">Tong so diem</button>
+            </td>
+            <td>
+                <h1 id="hienthidiem"></h1>
+            </td>
+        </tr>
+    </table>
+    <script>
+        function tongdiem() {
+            let a1 = +document.getElementById("toan").value;
+            let b1 = +document.getElementById("van").value;
+            let c1 = +document.getElementById("anh").value;
+            let d1 = +document.getElementById("kv").value;
+            t= a1+b1+c1+d1
+            document.getElementById("hienthidiem").innerHTML = t
+        }
+    </script>
+</body>
+</html>

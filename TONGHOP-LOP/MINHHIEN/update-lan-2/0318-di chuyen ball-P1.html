@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <img 
+    src="https://www.pngall.com/wp-content/uploads/5/Sports-Ball-Transparent.png" 
+    alt="" ;
+    id="x"
+    style="
+    height: 100px;
+    position: absolute;
+    top: 100px;
+    left: 150px;">
+    <button onclick="phai()">Go to the Right</button>
+    <button onclick="trai()">Go to the Left</button>
+    <button onclick="duoi()">Go Down</button>
+    <button onclick="tren()">Go Up</button>
+
+    <script>
+        function phai(){
+            let y= document.getElementById("x")
+            y.style.left= parseInt(y.style.left) + 20 + "px"
+        }
+        function trai(){
+            let y= document.getElementById("x")
+            y.style.left= parseInt(y.style.left) - 20 + "px"
+        }
+        function duoi(){
+            let y= document.getElementById("x")
+            y.style.top= parseInt(y.style.top) + 20 + "px"
+        }
+        function tren(){
+            let y= document.getElementById("x")
+            y.style.top= parseInt(y.style.top) -  20 + "px"
+        }
+
+
+        // An nut a thi di sang Trai. an d thi di sang Phai
+        window.addEventListener ('keydown', (e)=> {
+            if(e.key =='a'){
+                trai();
+            }
+            if(e.key =='d'){
+                phai();
+            }
+           
+        })
+    </script>
+</body>
+</html>

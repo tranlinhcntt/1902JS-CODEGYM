@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sach Team Building</title>
+</head>
+<body>
+    <canvas id="cv" width="370px" height="100px";style="border:1px" ; style="background-color:hwb(326 70% 6%)" ></canvas>
+    <table>
+        <tr>
+            <script>
+            let x=document.getElementById("cv");
+            let x1=x.getContext("2d")
+            x1.font = "30px Arial";
+            x1.strokeText("Team building",90,60);
+            </script>  
+        </tr>
+    </table>
+    <br>
+    <!-- -->
+    <button onclick="addmember()"; style="border-color: rgb(0, 225, 255); width: 120px;">Them nguoi moi</button>
+    <button onclick="list()"; style="border-color: rgb(0, 225, 255); width: 120px">Danh sach</button>
+    <button onclick="timkiem()"; style="border-color: rgb(0, 225, 255);width: 120px">Tim kiem</button>
+    <div id="member"></div>
+    <script>
+        let listmember =[
+            {
+            name: "Pikachu",
+            position: "PL", 
+            },
+            {
+            name: "Hitokage",
+            position: "Staff", 
+            },
+            {
+            name: "Fushigidane",
+            position: "Assistant", 
+            },
+            {
+            name:"Zenigame" ,
+            position: "Staff", 
+            } 
+            ];
+        list();
+        // 
+        // 
+        // *Hiển thị danh sách:
+        function list(){
+            let str = "";
+            if(listmember.length>0){
+                str += `<br><br><p>Tong so thanh vien: ${listmember.length}</p>`
+            }
+            for(let i=0; i<listmember.length; i++){
+                str +=  `<h3>${listmember[i].name+""+"-"+listmember[i].position}
+                    <button onclick="editname(${i})"; style="border-color: rgb(209, 88, 233)">Edit Name</button>
+                    <button onclick="editposition(${i})"; style="border-color: rgb(209, 88, 233)">Edit Position</button>
+                    <button onclick="del(${i})"; style="border-color: rgb(209, 88, 233)">Delete</button><h3>`;
+            }
+            
+            document.getElementById("member").innerHTML=str
+        }
+        // 
+        // 
+        //  **Tính năng thêm người mới:
+        function addmember(){
+        let str = '<input id="them"><button onclick="add()">Add</button> '
+            document.getElementById("member").innerHTML = str;
+       }
+        function add(){
+            let def = document.getElementById("them").value;
+            if(def != ""){
+                // Tạm thời mặc định thêm mới sẽ có chức vụ là Staff (Có tgian sẽ làm tiếp :v )
+                listmember.push({name: def, position:"Staff"})
+            }
+                list();
+            }
+        // 
+        // 
+        //***Tìm kiếm theo tên (chuyển ký tự in hoa-> in thường : toLowerCase; tìm kiếm gần đúng includes)
+        function timkiem(){
+            let str = '<input id="tim"><button onclick="tim()">Search</button> '
+            document.getElementById("member").innerHTML = str;
+        }
+            function tim(){
+
+                for(let i=0; i<listmember.length; i++){
+                    let xyz = document.getElementById("tim").value;
+                    let abc = listmember[i].name;
+
+                    if(abc.toLowerCase().includes(xyz)!==false){
+                    document.getElementById("member").innerHTML="Not Found"+"<br>"+"Xin moi nhap lai";
+                    }
+                    if(abc.toLowerCase().includes(xyz)==true){
+                    document.getElementById("member").innerHTML=("KQ: " + abc +"-"+ listmember[i].position);
+                    }
+                    }
+                }
+        // 
+        // 
+        // ***Tính năng xóa tên đã chọn:
+        function del(mh){
+            listmember.splice(mh,1);
+            list();
+        }
+        // 
+        //    
+        // ****Tính năng Edit :
+        function editname(hm){
+            let str=`<h3><input  id="Suaten"; value ="${listmember[hm].name}"><button onclick="suaten(${hm})">Sua ten</button></h3>`;
+            document.getElementById("member").innerHTML= str;
+        }
+            function suaten(hm){
+                listmember[hm].name =document.getElementById("Suaten").value
+                list();
+            }
+        function editposition(hm){
+            let str=`<h3><input  id="Suachucvu"; value ="${listmember[hm].position}"><button onclick="suachucvu(${hm})">Sua chuc vu</button></h3>`;
+            document.getElementById("member").innerHTML= str;
+        }
+            function suachucvu(hm){
+                listmember[hm].position =document.getElementById("Suachucvu").value
+                list();
+            }
+    </script>
+    
+    <br>
+    <p>Hoàn thiện thêm các tính năng :</p>
+    <p>4/ table-> tên-nút delete-to be continue...</p>
+    <p>5/ Tính năng add Position-to be continue...</p>
+    
+
+</body>
+</html>

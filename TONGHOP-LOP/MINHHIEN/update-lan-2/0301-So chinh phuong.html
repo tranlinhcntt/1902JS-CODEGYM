@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- So chinh phuong: can bac 2 cua so nay la 1 so nguyen=> chia het cho 1 va so du = 0 -->
+    <script>
+        let x = +prompt("nhap x")
+        let y = +prompt("nhap y")
+        for(let i = x; i <= y; i++){
+            if(Math.sqrt(i,2) % 1 == 0){
+               document.write(i +"<br>")
+            } 
+        }
+    </script>
+    <!-- Rut gon log -->
+    <script>
+        let x1 = Math.ceil(Math.sqrt(+prompt("nhap x1")))
+        let y1 = Math.ceil(Math.sqrt(+prompt("nhap y1")))
+        for(let i = x1; i <= y1; i++){
+            console.log(i);
+            document.write(i*i +"<br>");   
+        }
+    </script>
+</body>
+</html>

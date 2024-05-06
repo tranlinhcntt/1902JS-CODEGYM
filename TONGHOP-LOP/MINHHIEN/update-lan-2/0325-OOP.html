@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- OOP: Lap trinh huong doi tuong-La 1 cach to chuc du lieu giup mo ta thong tin 
+    can quan ly tot hon
+Doi tuong: la 1 bien dac biet ma ben trong bao gom nhieu phan tu co ten
+Cu phap: let oop = {}-->
+
+    <script>
+        let oop = [
+            {
+                name: "Hien",
+                grade: "9",
+                room: "16",
+                teacher:"Minh"
+            },
+            {
+                name: "Duy",
+                grade:"8",
+                room: "10",
+                teacher:"Hoang",
+                f1: function(){
+                    alert("halo");
+            }}
+           
+        ]
+        alert(oop[1].name);
+        ocument.write(oop[0]["name"])
+        oop[1].f1()
+    </script>
+     
+</body>
+</html>

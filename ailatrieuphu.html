@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+</style>
+<body>
+    <div style="display: flex;">
+    <div id="main" style="width: 60%; height: 600px; background-image:url(https://static.wikia.nocookie.net/ai-la-trieu-phu/images/3/3a/H%C3%ACnh_hi%E1%BB%87u_Ai_l%C3%A0_tri%E1%BB%87u_ph%C3%BA_2020_%28Kh%C3%B4ng_logo%29.png/revision/latest?cb=20200518022416&path-prefix=vi);"><center><h1 style="color: aliceblue;">Ai là triệu phú</h1></center></div>
+        <div style="height: 500px; width: 20%;">
+          <h1 id="counter">30</h1>
+          <table><tr><td>Điểm của bạn là:</td><td id="point"></td></tr></table>
+          <div id="xxx"><button onclick="start()">Bắt đầu</button></div>
+       </div>
+      </div>
+       <script>
+           var stop = 1;
+           let a = 0;
+           let  point = 1;
+
+             function dung() {
+               alert('Câu trả lời chính xác, mời bạn đến câu hỏi tiếp theo');
+               document.getElementById('point').innerHTML = point++;
+               stop = 2;
+               next();
+             }
+
+             function sai() {
+               alert('Đáp án của bạn đã Sai và trò chơi kết thúc !');
+
+             }
+
+            function next() {
+                a++;
+                console.log(a);
+                cauhoi(a);
+                stop = 1;
+            }
+
+            function start() {
+                next();
+                document.getElementById('xxx').innerHTML = '';
+            }
+
+            function cauhoi(a) {
+   
+                 if (a == 1) {
+                   clock();
+                   let str = "Câu hỏi số 1: Màu chủ đạo của tờ tiền Polymer mệnh giá 500.000 đồng là gì?";
+                   str += "<table><tr><td><button onclick='dung()'>A. Xanh<button><td><td><button onclick='sai()'>B. Đỏ<button><td><tr><tr><td><button onclick='sai()'>C. Vàng<button><td><td><button onclick='sai()'>D. Tím<button><td><tr><table>";
+                   document.getElementById('main').innerHTML = str;
+                }
+   
+                if (a == 2) {
+                   clock();
+                   let str = "Câu hỏi số 2: Đâu là tên một loại bánh nổi tiếng ở Huế?";
+                   str += "<table><tr><td><button onclick='sai()'>A. Thích<button><td><td><button onclick='dung()'>B. Khoái<button><td><tr><tr><td><button onclick='sai()'>C.Vui<button><td><td><button onclick='sai()'>D. Sướng<button><td><tr><table>";
+                   document.getElementById('main').innerHTML = str;
+                }
+   
+                if (a == 3) {
+                    clock();
+                    let str = "Câu hỏi số 3: Tượng đài Chiến thắng Điện Biên Phủ được dựng trên ngọn đồi nào?";
+                    str += "<table><tr><td><button onclick='dung()'>A. D1<button><td><td><button onclick='sai()'>B. C1<button><td><tr><tr><td><button onclick='sai()'>C. A1<button><td><td><button onclick='sai()'>D. E1<button><td><tr><table>";
+                    document.getElementById('main').innerHTML = str;
+                }
+   
+                if (a == 4) {
+                    clock();
+                    let str = "Câu hỏi số 4: Bảo tàng Hồ Chí Minh được thiết kế theo dáng một loài hoa nào?";
+                    str += "<table><tr><td><button onclick='sai()'>A. Hoa hướng dương<button><td><td><button onclick='sai()'>B. Hoa hồng<button><td><tr><tr><td><button onclick='sai()'>C. Hoa đào<button><td><td><button onclick='dung()'>D. Hoa sen<button><td><tr><table>";
+                    document.getElementById('main').innerHTML = str;
+                }
+   
+               if (a == 5) {
+                    clock();
+                    let str = "Câu hỏi số 5: Tháng âm lịch nào còn được gọi là 'Tháng cô hồn'?";
+                    str += "<table><tr><td><button onclick='dung()'>A.Tháng bảy<button><td><td><button onclick='sai()'>B.Tháng tám<button><td><tr><tr><td><button onclick='sai()'>C.Tháng chín<button><td><td><button onclick='sai()'>D. Tháng mười<button><td><tr><table>";
+                    document.getElementById('main').innerHTML = str;
+                }
+   
+                if (a == 6) {
+                    clock();
+                    let str = "Câu hỏi số 6: Có câu thành ngữ: Đi mây về... gì?";
+                    str += "<table><tr><td><button onclick='sai()'>A. Mây<button><td><td><button onclick='sai()'>B. Núi<button><td><tr><tr><td><button onclick='sai()'>C.  Biển<button><td><td><button onclick='dung()'>D.  Gió<button><td><tr><table>";
+                    document.getElementById('main').innerHTML = str;
+               }
+                
+                if (a == 7) {
+                    clock();
+                    let str = "Câu hỏi số 7: Gỗ mun thường có màu gì??";
+                    str += "<table><tr><td><button onclick='sai()'>A. Vàng<button><td><td><button onclick='dung()'>B.Đen<button><td><tr><tr><td><button onclick='sai()'>C. Đỏ<button><td><td><button onclick='sai()'>D. Xanh<button><td><tr><table>";
+                    document.getElementById('main').innerHTML = str;
+                }
+   
+             
+                if (a == 8) {
+                    clock();
+                    let str = "Câu hỏi số 8: Đâu là tên một loại đồ chơi dân gian của trẻ em?";
+                    str += "<table><tr><td><button onclick='dung()'>A. Tò he<button><td><td><button onclick='sai()'>B. Tò mò<button><td><tr><tr><td><button onclick='sai()'>C. Tò vò<button><td><td><button onclick='sai()'>D. Tến Tò<button><td><tr><table>";
+                    document.getElementById('main').innerHTML = str;
+                }
+   
+             
+                if (a == 9) {
+                clock();
+                    let str = "Câu hỏi số 9: Nhạc sĩ nào là chủ nhân của bài hát'Tại vì sao'?";
+                    str += "<table><tr><td><button onclick='sai()'>A. Tlinh <button><td><td><button onclick='dung()'>B. MCK<button><td><tr><tr><td><button onclick='dung()'>C. Wxrdie<button><td><td><button onclick='sai()'>D. Sơn Tùng<button><td><tr><table>";
+                    document.getElementById('main').innerHTML = str;
+                }
+   
+                if (a == 10) {
+                    clock();
+                   let str = "Câu hỏi số 10: Mèo tam thể thường có bao nhiêu màu?";
+                   str += "<table><tr><td><button onclick='sai()'>A. 1 màu<button><td><td><button onclick='sai()'>B. 2 màu<button><td><tr><tr><td><button onclick='dung()'>C. 3 màu <button><td><td><button onclick='sai()'>D. 4 màu<button><td><tr><table>";
+                   document.getElementById('main').innerHTML = str;
+                }
+
+                if (a == 11) {
+                    alert('Bạn đã hoàn thành trò chơi !!!');
+                }
+            }
+
+             function clock() {
+                 let timeLeft = 30;
+                 const countdownElement = document.getElementById('counter');
+                 const stopButton = document.getElementById('stopButton');
+
+                 const intervalId = setInterval(() => {
+                 timeLeft -= 1;
+                 countdownElement.textContent = timeLeft;
+       
+                 if (stop == 2) {
+                    clearInterval(intervalId);
+                 }
+
+                 if (timeLeft <= 0) {
+                   clearInterval(intervalId);
+                   alert('Game end');
+                }
+                 }, 1000);
+            }
+       </script>
+</body>
+</html>

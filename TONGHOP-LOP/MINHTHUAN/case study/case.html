@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+        }
+        
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            color: black;
+        }
+        
+        .menu {
+            display: block;
+        }
+        
+        .item-menu {
+            height: 34px;
+            background: #f2f2f2;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        button {
+            width: 100%;
+            height: 100%;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .form-popup {
+            display: none;
+            justify-content: center;
+            right: 15%;
+            border: 1px solid #ddd;
+            background-color: #fefefe;
+            z-index: 9;
+            padding: 15px;
+        }
+        
+        .form-container {
+            max-width: 300px;
+            padding: 20px;
+            background-color: white;
+        }
+        
+        .form-container input[type=text] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+        
+        .form-container input[type=button] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            cursor: pointer;
+            width: calc(100% - 20px);
+            margin-bottom: 10px;
+        }
+        
+        .form-container input[type=button]:hover {
+            background-color: #45a049;
+        }
+        
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        #productTable {
+            display: inline-table;
+        }
+        
+        img {
+            width: 100px;
+            height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+        }
+        
+        .group-action {
+            gap: 12px;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .group-action button {
+            width: 100px;
+            height: 40px;
+            border-radius: 8px;
+        }
+        
+        .edit {
+            background: #45a049;
+            color: #fff;
+        }
+        
+        .delete {
+            background: #e21c24;
+            color: #fff;
+        }
+        
+        #listProduct {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .card {
+            display: block;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 24px;
+            background: #f1f1f1;
+            width: 200px;
+            height: 250px;
+        }
+        
+        .name-product {
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .price-product {
+            font-size: 18px;
+            font-weight: bold;
+            padding-bottom: 10px;
+            color: #e21c24;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex;">
+        <div style="width: 20%;" class="menu">
+            <div class="item-menu"><button onclick="home()">Home</button></div>
+            <div class="item-menu"><button onclick="showProductList()">Danh sách sản phẩm</button></div>
+            <div class="item-menu"><button onclick="showAddProductForm()">Thêm sản phẩm</button></div>
+        </div>
+        <div style="width: 80%;padding: 20px;padding-top: 0px;">
+
+            <div id="listProduct">
+
+            </div>
+            <table id="productTable">
+            </table>
+
+            <div class="form-popup" id="addProductForm">
+                <div class="form-container">
+                    <span class="close" onclick="closeAddProductForm()">&times;</span>
+                    <h2>Add Product</h2>
+                    <input type="text" id="productName" placeholder="Product Name">
+                    <input type="text" id="productImg" placeholder="Product Img">
+                    <input type="text" id="productCode" placeholder="Product Code">
+                    <input type="text" id="productStatus" placeholder="Status">
+                    <input type="text" id="productPrice" placeholder="Price">
+                    <input type="button" value="Add" onclick="addProductToList()">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let listProduct = [];
+        let productIdCounter = 0;
+
+        class Product {
+            constructor(id, img, name, code, status, price) {
+                this.id = id;
+                this.img = img;
+                this.name = name;
+                this.code = code;
+                this.status = status;
+                this.price = price;
+            }
+        }
+        document.addEventListener("DOMContentLoaded", function(event) {
+            home(); // Gọi hàm home() để hiển thị giao diện khi trang được load
+        });
+
+        function showProductList() {
+            let productTable = document.getElementById('productTable');
+            let tableHTML = `<tr>
+                        <th>Id</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Code</th>
+                        <th>Status</th>
+                        <th>Price</th>
+                        <th>Actions</th>
+                    </tr>`;
+            listProduct.forEach(product => {
+                tableHTML += `
+                    <tr>
+                        <td>${product.id}</td>
+                        <td><img src="${product.img}"/></td>
+                        <td>${product.name}</td>
+                        <td>${product.code}</td>
+                        <td>${product.status}</td>
+                        <td>${product.price}</td>
+                        <td>
+                            <div class="group-action">
+                                <button onclick="editProduct(${product.id})" class="edit">Edit</button>
+                                <button onclick="deleteProduct(${product.id})" class="delete">Delete</button>    
+                            </div>
+                           
+                        </td>
+                    </tr>
+                `;
+            });
+            productTable.innerHTML = tableHTML;
+
+            // Show add product button
+            document.getElementById("productTable").style.display = "inline-table";
+            // Hide add product form
+            document.getElementById("addProductForm").style.display = "none";
+            document.getElementById("listProduct").style.display = "none";
+        }
+
+        function showAddProductForm() {
+            // Hide add product button
+            document.getElementById("productTable").style.display = "none";
+            // Show add product form
+            document.getElementById("addProductForm").style.display = "flex";
+            document.getElementById("listProduct").style.display = "none";
+        }
+
+        function closeAddProductForm() {
+            // Hide add product form
+            document.getElementById("addProductForm").style.display = "none";
+            // Show add product button
+            document.getElementById("productTable").style.display = "none";
+            document.getElementById("listProduct").style.display = "flex";
+        }
+
+        function home() {
+            let home = document.getElementById('listProduct');
+            let homeHTML = '';
+            listProduct.forEach(product => {
+                homeHTML += `
+                
+                <div class="card">
+                <img src="${product.img}"style="width: 70%;height: 50%;"/>
+                <div style="display: block;">
+                    <div class="name-product">${product.name}</div>
+                    <div class="price-product">$ ${product.price}</div>
+                    <button style="font-size:16px; background:#e21c24;padding:10px; color: #fff; border-radius: 5px">Mua ngay</button>
+                </div>
+                </div>
+                
+                `;
+            });
+            home.innerHTML = homeHTML;
+            // Hide add product form
+            document.getElementById("addProductForm").style.display = "none";
+            // Show add product button
+            document.getElementById("productTable").style.display = "none";
+            document.getElementById("listProduct").style.display = "flex";
+        }
+
+        function addProductToList() {
+            let productName = document.getElementById("productName").value;
+            let productImg = document.getElementById("productImg").value;
+            let productCode = document.getElementById("productCode").value;
+            let productStatus = document.getElementById("productStatus").value;
+            let productPrice = document.getElementById("productPrice").value;
+            productIdCounter++;
+            let newProduct = new Product(productIdCounter, productName, productImg, productCode, productStatus, productPrice);
+            listProduct.push(newProduct);
+            closeAddProductForm();
+            showProductList();
+            // Reset form
+            document.getElementById("productName").value = "";
+            document.getElementById("productImg").value = "";
+            document.getElementById("productCode").value = "";
+            document.getElementById("productStatus").value = "";
+            document.getElementById("productPrice").value = "";
+        }
+
+        function editProduct(productId) {
+            let productName = prompt("Enter product name:");
+            let productImg = prompt("Enter product image:");
+            let productCode = prompt("Enter product code:");
+            let productStatus = prompt("Enter product status:");
+            let productPrice = prompt("Enter product price:");
+            let index = listProduct.findIndex(product => product.id === productId);
+            if (index !== -1) {
+                listProduct[index].name = productName;
+                listProduct[index].img = productImg;
+                listProduct[index].code = productCode;
+                listProduct[index].status = productStatus;
+                listProduct[index].price = productPrice;
+                showProductList();
+            }
+        }
+
+        function deleteProduct(productId) {
+            let index = listProduct.findIndex(product => product.id === productId);
+            if (index !== -1) {
+                listProduct.splice(index, 1);
+                showProductList();
+            }
+        }
+
+        // Initial product list
+        let iphone6 = new Product(++productIdCounter, 'https://supportmobile.com.vn/wp-content/uploads/2023/09/ip6-2.jpg', 'iphone 6', 'ip_6', true, '1000');
+        let iphone7 = new Product(++productIdCounter, 'https://cdn.tgdd.vn/Products/Images/42/87839/iphone-7-plus-128gb-hh-600x600.jpg', 'iphone 7', 'ip_7', true, '1200');
+        let iphone8 = new Product(++productIdCounter, 'https://p-vn.ipricegroup.com/uploaded_63517104f6dda2750cc60a2c378eaba9.jpg', 'iphone 8', 'ip_8', true, '1500');
+        let iphonex = new Product(++productIdCounter, 'https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-hh-600x600.jpg', 'iphone x', 'ip_x', true, '2000');
+        listProduct.push(iphone6, iphone7, iphone8, iphonex);
+    </script>
+</body>
+
+</html>
+supportmobile.com.vn

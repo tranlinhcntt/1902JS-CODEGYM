@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Cho so hoc sinh nam, nu. 
+        Tim so cap khac gioi nam-nu va so cap dong gioi nam-nam/nu-nu -->
+    <script>
+    let nu = +prompt("so ban nu")
+    let nam = +prompt("so ban nam")
+    if(nu<nam){
+        alert("So cap khac gioi la" + nu)
+        alert("So cap dong gioi la" + (nam-nu)/2)
+    }
+    if(nam<nu){
+        alert("So cap khac gioi la" + nam)
+        alert("So cap dong gioi la" + (nu-nam)/2)
+    }
+    if(nam==nu){
+        alert("So cap khac gioi la" + nam)
+    }
+    </script>
+</body>
+</html>

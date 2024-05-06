@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--VD2: Nhap vao x, in ra vi tri cua x trong Mang 
+        let xyz=[5,6,5,4,7,3,2];
+        let x=+prompt("Nhap x")
+        for(let i=0;i<xyz.length;i++){
+            if(x==xyz[i]){
+                document.write(i)
+            }
+        }
+    -->
+    <!-- VD3: Tim max va vi tri cua max -->
+    <script>
+        let xyz=[5,6,5,4,7,3,2];
+        let max = xyz[0];
+        let vt=0
+        for(let i=0; i<xyz.length;i++){
+            if(xyz[i]>max){
+                max=xyz[i]
+                vt=i
+            }
+        }
+        document.write(max+ " " + vt)
+    </script>
+</body>
+</html>

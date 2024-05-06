@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- nhập vào x, in ra vị trí của x ở trong mảng (vd: x = 4 => 3. x = 5 => 0, 1, 4)-->
+    <script>
+        let arr = [5, 5, 3, 4, 5, 2];
+        let x = +prompt("nhập x: ");
+        for (let i = 0; i < arr.length; i++) {
+            if (x == arr[i]) {
+                document.write(i + " ");
+            }
+
+        }
+    </script>
+</body>
+
+</html>

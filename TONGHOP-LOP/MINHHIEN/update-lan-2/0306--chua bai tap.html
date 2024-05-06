@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Nhap vao X, can co tong X dong tu cac loai tien 1000d, 2000d va 5000d.
+    Lap chuong trinh de tim ra tat ca cac phuong an co the 
+    (can bn to 1000d, bn to 2000d, bn to 5000d thoa man tong = X) -->
+    <script>
+            let X = +prompt("Nhap tong X");
+            for(let s5 = 0; s5 * 5 <= X; s5++ ){
+                for(let s2 = 0; s2 * 2 <= X - s5 * 5 ; s2++ ){
+                    let s1 = X - s5*5 -s2*2
+                    if(s1>=0) {
+                        document.write(s5 + "," + s2 + "," + s1 + "<br>")
+                    }
+                    }      
+            }
+    </script>
+</body>
+</html>

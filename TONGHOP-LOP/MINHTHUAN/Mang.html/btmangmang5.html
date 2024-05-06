@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--tìm max thứ 2-->
+    <script>
+        let arr = [5, 5, 3, 4, 5, 2];
+        let max = arr[0];
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+
+        }
+        let max2 = -999;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] > max2 && arr[i] < max) {
+                max2 = arr[i];
+            }
+        }
+        document.write('max 2 là ' + max2);
+    </script>
+</body>
+
+</html>

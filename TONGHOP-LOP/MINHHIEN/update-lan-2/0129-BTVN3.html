@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change money</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Amount</td>
+            <td>From Currency</td>
+            <td>To Currency</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" id="amount">
+            </td>
+            <td><select style="height: 25px; width: 100px"; id="from">
+                    <option value="1">Vietnam</option>
+                    <option value="19">Korea</option>
+                    <option value="23000">USA</option>
+    
+                </select>
+            </td>
+            <td><select style="height: 25px; width: 100px"; id="to">
+                    <option value="1">Vietnam</option>
+                    <option value="19">Korea</option>
+                    <option value="23000">USA</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="fc1()">Change</button>
+            </td>
+        </tr>
+        <script> 
+        // value ---> VD: lấy giá trị chứa tại phần Text thuộc Id "From" 
+        // innerhtml : in giá trị sau dấu "=" vào phần trống của html chứa id "Result"
+            function fc1() {
+                let a=document.getElementById("from").value; 
+                let b=document.getElementById("to").value;
+                let c=document.getElementById("amount").value;
+                document.getElementById("Result").innerHTML = "Ket qua la:" +((a/b)*c)
+            }
+        </script>  
+    </table>
+    <h1 id="Result"></h1>
+</body>
+</html>

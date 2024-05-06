@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const questions = [{
+            question: "Ai là người đầu tiên đặt chân lên Mặt Trăng?",
+            options: ["Neil Armstrong", "Buzz Aldrin", "Yuri Gagarin", "Alan Shepard"],
+            answer: "Neil Armstrong"
+        }, {
+            question: "Ai là tác giả của cuốn tiểu thuyết 'Nhật ký của Anne Frank'?",
+            options: ["Anne Frank", "Virginia Woolf", "Emily Brontë", "Harper Lee"],
+            answer: "Anne Frank"
+        }, {
+            question: "Ai là nhà sáng lập Facebook?",
+            options: ["Mark Zuckerberg", "Bill Gates", "Jeff Bezos", "Elon Musk"],
+            answer: "Mark Zuckerberg"
+        }];
+
+        function startGame() {
+            console.log("Chào mừng bạn đến với chương trình Ai là Triệu phú!");
+            let score = 0;
+            for (let i = 0; i < questions.length; i++) {
+                const currentQuestion = questions[i];
+                console.log(`Câu hỏi ${i+1}: ${currentQuestion.question}`);
+                console.log("Các lựa chọn:");
+                for (let j = 0; j < currentQuestion.options.length; j++) {
+                    console.log(`${j+1}. ${currentQuestion.options[j]}`);
+                }
+                const userAnswer = prompt("Nhập câu trả lời của bạn (nhập số tương ứng với lựa chọn):");
+                if (userAnswer && currentQuestion.options[userAnswer - 1] === currentQuestion.answer) {
+                    console.log("Chính xác!");
+                    score++;
+                } else {
+                    console.log("Sai rồi! Đáp án đúng là: " + currentQuestion.answer);
+                }
+            }
+            console.log(`Bạn đã trả lời đúng ${score} câu hỏi.`);
+        }
+        startGame();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="namduonglich">
+    <button onclick="AL()">Tra cuu nam Am lich</button>
+    <h1 id="namamlich"></h1>
+    <script>
+        function AL(){
+            let a1 = document.getElementById("namduonglich").value;
+            let tc = a1 % 10
+            let dc = a1 % 12
+// Thien can
+            let am=""
+            if(tc==0){
+                am="Canh "
+            }
+            if(tc==1){
+                am="Tan "
+            }
+            if(tc==2){
+                am="Nham "
+            }
+            if(tc==3){
+                am="Quy "
+            }
+            if(tc==4){
+                am="Giap "
+            }
+            if(tc==5){
+                am="At "
+            }
+            if(tc==6){
+                am="Binh "
+            }
+            if(tc==7){
+                am="Dinh "
+            }
+            if(tc==8){
+                am="Mau "
+            }
+            if(tc==9){
+                am="Ky "
+            }
+// Dia chi
+            if(dc==0){
+                am +="Than"
+            }
+            if(dc==1){
+                am +="Dau"
+            }
+            if(dc==2){
+                am +="Tuat"
+            }
+            if(dc==3){
+                am +="Hoi"
+            }
+            if(dc==4){
+                am +="Ti"
+            }
+            if(dc==5){
+                am +="Suu"
+            }
+            if(dc==6){
+                am +="Dan"
+            }
+            if(dc==7){
+                am +="Mao"
+            }
+            if(dc==8){
+                am +="Thin"
+            }
+            if(dc==9){
+                am +="Ty"
+            }
+            if(dc==10){
+                am +="Ngo"
+            }
+            if(dc==11){
+                am +="Mui"
+            }
+        document.getElementById("namamlich").innerHTML= am
+    }
+    </script>
+
+</body>
+</html>

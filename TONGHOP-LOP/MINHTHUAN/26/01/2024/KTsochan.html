@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="a">
+    <button onclick="kiemtra()">Kiểm Tra</button>
+    <div id="ketqua"></div>
+    <script>
+        function kiemtra() {
+            let a = parseInt(document.getElementById('a').value);
+            if (a % 2 == 0) {
+                alert(`${a} là một số chẵn`)
+            }
+            if (a % 2 != 0) {
+                alert(`${a} là một số lẽ`)
+            }
+        }
+    </script>
+</body>
+
+</html>

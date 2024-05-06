@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <!-- Nhap N la tong so phan tu cua Mang
+            Nhap tung phan tu mot
+        CAU HOI 1: Tim phan tu co gia max
+        CAU HOI 2: Dem so phan tu co gia tri max-->
+
+    <script>
+        let n=+prompt("Nhap so luong phan tu") 
+        let arr = [];
+        for(let i=0; i<n; i++){
+            let x = +prompt("Nhap vao phan tu thu " +i);
+            arr.push(x); 
+        }
+        let max = arr[0]
+        let dem =0; 
+        for(let i=0; i<arr.length; i++){
+            if(arr[i] > max){
+                max = arr[i];
+            }
+            }        
+        document.write("Max la " + max +"<br>")
+
+        for(let i=0; i<arr.length; i++){
+                if(arr[i]==max){
+                dem++
+            }
+            }
+        document.write("So luong phan tu Max la " + dem)
+    </script>
+</body>
+</html>

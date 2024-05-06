@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="month">
+    <button onclick="day()">tinh so ngay</button>
+    <h1 id="tinhngay"></h1>
+    <script>
+        function day() {
+            let a1 = +document.getElementById("month").value; 
+            if(a1>0) {
+                if(a1==1 || a1==3 || a1==5 || a1==7 || a1==8 || a1==10 || a1==12) {
+                document.getElementById("tinhngay").innerHTML="So ngay trong thang la 31 ngay"}
+
+                else if(a1==2) {
+                document.getElementById("tinhngay").innerHTML= "So ngay trong thang la 28 hoac 29 ngay"}
+
+                else{
+                document.getElementById("tinhngay").innerHTML= "So ngay trong thang la 28 hoac 29 ngay"}  
+            }
+
+            else{
+                document.getElementById("tinhngay").innerHTML= "So thang khong dung, moi nhap lai"
+            }
+            }
+    </script>          
+</body>
+</html>

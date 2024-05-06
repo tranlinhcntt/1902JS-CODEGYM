@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // nhập vào n là số lượng phần tử trong mảng
+        // nhập vào n phần tử
+        // in ra mỗi phần tử 1 hàm
+        let n = +prompt('nhập vào số lượng phần tử');
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            let x = +prompt('nhập vào phần tử thứ ' + i);
+            arr.push(x)
+        }
+        for (let i = 0; i < arr.length; i++) {
+            document.write(arr[i] + "<br>");
+        }
+    </script>
+</body>
+
+</html>

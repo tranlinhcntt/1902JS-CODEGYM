@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     
+     <!-- viet cac phan tu trong Mang = cach xuong dong cho de xem 
+        In ra cac phan tu > 10
+    let arr = [
+        [1,2,3,4],
+        [8,9,9],
+        [22,3,44]
+        ]
+    for(let i=0; i<arr.length;i++){
+        for(let j=0; j<arr[i].length; j++){
+            if(arr[i][j]>10){
+                    document.write(arr[i][j] +"<br>")
+            }
+        }
+    }-->
+  
+<script>
+    // Tinh tong cac phan tu chia het cho 2
+    let arr = [
+        [1,2,3,4],
+        [8,9,9],
+        [22,3,44]
+        ]
+    let tong=0
+    for(let i=0; i<arr.length;i++){
+        for(let j=0; j<arr[i].length; j++){
+            if(arr[i][j]%2==0){
+                tong+=arr[i][j]
+            }
+        }
+    }
+    document.write(tong)
+
+</script>
+</body>
+</html>

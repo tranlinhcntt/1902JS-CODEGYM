@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Viết hàm insertnumbertoarray() nhận vào 1 mảng các số nguyên, 1 số nguyên x, và 1 số nguyên vị trí index.
+    Hàm trả về mảng ban đầu nếu vị trí index có giá trị < 0 hoặc lớn hơn chiều dài mảng.
+    Nếu không thì trả về mảng mới đã được thêm số nguyên x vào vị trí index -->
+
+<script>
+function insertnumbertoarray(arr, x, index){
+    if (index<0 || index > arr.length){
+        return arr;
+    }
+    // 
+    let mang=[];
+    for(let i=0; i<index; i++){
+        mang.push(arr[i]);
+    }        
+    for(let i=index; i<=arr.length; i++){
+        mang.push(arr[i]);
+    }
+    mang.splice(index, 1, x);
+    return mang;    
+    }
+    
+    alert(insertnumbertoarray([2, 3, 9],6 ,1));
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="showlist()">List</button>
+    <button onclick="showadd()">Add</button>
+    <div id="display"></div>
+
+    <script> 
+        let listsp = ["Ip15", "S23", "Oppo11F"];
+        showlist()
+
+        // Hien danh sach
+        function showlist(){
+            let str = "<h1>Danh sach san pham</h1>";
+            str += `<p>Tong so san pham: ${listsp.length}</p>`
+
+            for(let i=0; i<listsp.length; i++){
+            str += `<h3>${listsp[i]}
+                <button onclick="edit(${i})">Edit</button> 
+                <button onclick="del()">delete</button>`;
+            }
+            document.getElementById("display").innerHTML = str;
+            }
+        // 
+        // 
+        // 
+        // Giao dien cho phep Add san pham moi
+        function showadd(){
+            let str =  '<input id="Them"><button onclick="add()">Create</button> '
+            document.getElementById("display").innerHTML = str;
+            }
+
+        // Hien thi danh sach sau khi add ( Neu gia tri la rong "" thi khong co gi de add)
+        function add(){
+            if(document.getElementById("Them").value != ""){
+                listsp.push(document.getElementById("Them").value)
+            }
+                showlist();
+            }
+
+        // Edit san pham
+        function edit(mh){
+            let str =  `<input id="Them" value="${listsp[mh]}"> <button onclick="save(${mh})">Save</button>`
+            document.getElementById("display").innerHTML = str;
+        }
+
+        // Luu san pham vua Edit
+        function save(mh){
+            listsp[mh]= document.getElementById("Them").value;
+            showlist();
+        }
+
+        // Delete san pham trong danh sach???
+       
+        
+
+    </script>
+</body>
+</html>

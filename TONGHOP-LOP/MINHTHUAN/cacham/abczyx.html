@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr = [];
+        let x;
+        for (let i = 0;; i++) {
+            x = +prompt('nhập vào phần tử thứ ' + i);
+            if (x == -1) {
+                break;
+            }
+            arr.push(x);
+        }
+        for (let i = 0; i < arr.length; i++) {
+            document.write(arr[i] + "<br>");
+        }
+    </script>
+</body>
+
+</html>

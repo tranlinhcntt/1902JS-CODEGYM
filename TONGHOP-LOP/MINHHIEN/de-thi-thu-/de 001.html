@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Cho danh sách điểm thi ở trong 1 mảng, 
+    Viết hàm findAvg() với đầu vào là 1 mảng điểm và,
+đầu ra là điểm TB của danh sách điểm thi -->
+<script>
+    function findAvg(arr){
+        let sum = 0;
+        for(let i=0; i<arr.length; i++){
+            sum+= arr[i];
+        }
+        return sum/arr.length;
+    }
+    // Nhập số thực tế cho hàm arr  để function tính toán kết quả : VD: 
+    alert(findAvg(arr=[8,9,10]));
+</script>
+</body>
+</html>

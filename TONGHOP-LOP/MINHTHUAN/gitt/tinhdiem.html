@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="T" />
+    <input type="text" id="L" />
+    <input type="text" id="H" />
+    <select name="" id="kv">
+        <option value="0.75">KV1</option>
+        <option value="0.5">KV2-NT</option>
+        <option value="0.25">KV2</option>
+        <option value="0.25">KV3</option>
+    </select>
+    <button onclick="tinhdiem()">Tính Điểm</button>
+    <p id="kq"></p>
+    <script>
+        function tinhdiem() {
+            let T = +document.getElementById("T").value;
+            let L = +document.getElementById("L").value;
+            let H = +document.getElementById("H").value;
+            let kv = +document.getElementById("kv").value;
+            let diem = T + L + H + kv;
+            document.getElementById("kq").innerHTML = "tổng điểm là: " + diem;
+        }
+    </script>
+</body>
+
+</html>

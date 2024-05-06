@@ -1,122 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Simple Caro Game</title>
-<style>
-    table {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Caro Game</title>
+    <style>
+      table {
         border-collapse: collapse;
-    }
-    td {
+      }
+      td {
         width: 40px;
         height: 40px;
         border: 1px solid black;
         text-align: center;
         font-size: 24px;
         cursor: pointer;
-    }
-</style>
-</head>
-<body>
-<h1>Simple Caro Game</h1>
-<table id="board"></table>
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Simple Caro Game</h1>
+    <table id="board"></table>
 
-<script >
-    var board = []; 
-var currentPlayer = 'X';
-var boardSize = 10; 
-function initializeBoard() {
-    var table = document.getElementById('board');
-    for (var i = 0; i < boardSize; i++) {
-        var row = table.insertRow(i);
-        board.push([]);
-        for (var j = 0; j < boardSize; j++) {
+    <script>
+      var board = [];
+      var currentPlayer = "X";
+      var boardSize = 10;
+      function initializeBoard() {
+        var table = document.getElementById("board");
+        for (var i = 0; i < boardSize; i++) {
+          var row = table.insertRow(i);
+          board.push([]);
+          for (var j = 0; j < boardSize; j++) {
             var cell = row.insertCell(j);
-            cell.setAttribute('data-row', i);
-            cell.setAttribute('data-col', j);
+            cell.setAttribute("data-row", i);
+            cell.setAttribute("data-col", j);
             cell.onclick = cellClickHandler;
-            board[i][j] = '.';
+            board[i][j] = ".";
+          }
         }
-    }
-}
+      }
 
-function cellClickHandler() {
-    var row = parseInt(this.getAttribute('data-row'));
-    var col = parseInt(this.getAttribute('data-col'));
-    if (board[row][col] === '.') {
-        board[row][col] = currentPlayer;
-        this.textContent = currentPlayer;
-        if (checkWinner(row, col)) {
+      function cellClickHandler() {
+        var row = parseInt(this.getAttribute("data-row"));
+        var col = parseInt(this.getAttribute("data-col"));
+        if (board[row][col] === ".") {
+          board[row][col] = currentPlayer;
+          this.textContent = currentPlayer;
+          if (checkWinner(row, col)) {
             alert(currentPlayer + " wins!");
             resetBoard();
-        } else {
-            currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+          } else {
+            currentPlayer = currentPlayer === "X" ? "O" : "X";
+          }
         }
-    }
-}
+      }
 
-function checkWinner(row, col) {
-    var symbol = currentPlayer;
-    var count = 1;
+      function checkWinner(row, col) {
+        var symbol = currentPlayer;
+        var count = 1;
 
-      for (var i = col - 1; i >= 0 && board[row][i] === symbol; i--) {
-        count++;
-    }
-    for (var i = col + 1; i < boardSize && board[row][i] === symbol; i++) {
-        count++;
-    }
-    if (count >= 3) return true;
+        for (var i = col - 1; i >= 0 && board[row][i] === symbol; i--) {
+          count++;
+        }
+        for (var i = col + 1; i < boardSize && board[row][i] === symbol; i++) {
+          count++;
+        }
+        if (count >= 3) return true;
 
-  
-    count = 1;
-    for (var i = row - 1; i >= 0 && board[i][col] === symbol; i--) {
-        count++;
-    }
-    for (var i = row + 1; i < boardSize && board[i][col] === symbol; i++) {
-        count++;
-    }
-    if (count >= 3) return true;
+        count = 1;
+        for (var i = row - 1; i >= 0 && board[i][col] === symbol; i--) {
+          count++;
+        }
+        for (var i = row + 1; i < boardSize && board[i][col] === symbol; i++) {
+          count++;
+        }
+        if (count >= 3) return true;
 
-  
-    count = 1;
-    for (var i = row - 1, j = col - 1; i >= 0 && j >= 0 && board[i][j] === symbol; i--, j--) {
-        count++;
-    }
-    for (var i = row + 1, j = col + 1; i < boardSize && j < boardSize && board[i][j] === symbol; i++, j++) {
-        count++;
-    }
-    if (count >= 3) return true;
+        count = 1;
+        for (
+          var i = row - 1, j = col - 1;
+          i >= 0 && j >= 0 && board[i][j] === symbol;
+          i--, j--
+        ) {
+          count++;
+        }
+        for (
+          var i = row + 1, j = col + 1;
+          i < boardSize && j < boardSize && board[i][j] === symbol;
+          i++, j++
+        ) {
+          count++;
+        }
+        if (count >= 3) return true;
 
-  
-    count = 1;
-    for (var i = row - 1, j = col + 1; i >= 0 && j < boardSize && board[i][j] === symbol; i--, j++) {
-        count++;
-    }
-    for (var i = row + 1, j = col - 1; i < boardSize && j >= 0 && board[i][j] === symbol; i++, j--) {
-        count++;
-    }
-    if (count >= 3) return true;
+        count = 1;
+        for (
+          var i = row - 1, j = col + 1;
+          i >= 0 && j < boardSize && board[i][j] === symbol;
+          i--, j++
+        ) {
+          count++;
+        }
+        for (
+          var i = row + 1, j = col - 1;
+          i < boardSize && j >= 0 && board[i][j] === symbol;
+          i++, j--
+        ) {
+          count++;
+        }
+        if (count >= 3) return true;
 
-    return false;
-}
+        return false;
+      }
 
+      function resetBoard() {
+        board = [];
+        currentPlayer = "X";
+        var table = document.getElementById("board");
+        while (table.rows.length > 0) {
+          table.deleteRow(0);
+        }
+        initializeBoard();
+      }
 
-function resetBoard() {
-    board = [];
-    currentPlayer = 'X';
-    var table = document.getElementById('board');
-    while (table.rows.length > 0) {
-        table.deleteRow(0);
-    }
-    initializeBoard();
-}
-
-
-window.onload = function() {
-    initializeBoard();
-};
-
-</script>
-</body>
+      window.onload = function () {
+        initializeBoard();
+      };
+    </script>
+  </body>
 </html>

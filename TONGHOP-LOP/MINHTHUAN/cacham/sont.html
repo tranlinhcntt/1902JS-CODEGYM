@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="a">
+    <button onclick="NT(document.getElementById('a').value)">Kiểm tra</button>
+    <script>
+        function NT(x) {
+            let dem = 0;
+            if (x === 1) {
+                document.write("x không phải là số nguyên tố")
+            }
+            if (x == 2) {
+                document.write("x là số nguyên tố");
+            }
+            if (x > 2) {
+                for (let i = 2; i < x; i++) {
+                    if (x % i == 0) {
+                        dem = dem + 1;
+                    }
+                }
+                if (dem != 0) {
+                    document.write("x không phải số nguyên tố");
+                } else {
+                    document.write("x là số nguyên tố");
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

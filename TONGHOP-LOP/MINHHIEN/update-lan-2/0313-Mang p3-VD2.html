@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+    B1:Nhập vào N số lượng phần tử trong mảng
+    B2: Nhập đủ N số phần tử 
+    B3: In ra mỗi phần tử trên 1 hàng-->
+    <script>
+        let n=+prompt("Nhap so luong phan tu")
+        let arr = [];
+        for(let i=0; i<n; i++){
+            let x = +prompt("Nhap vao phan tu thu " +i);
+            arr.push(x)
+        }
+
+        for(let i=0; i<arr.length; i++){
+            document.write(arr[i] +"<br>")
+        }
+    </script>
+</body>
+</html>

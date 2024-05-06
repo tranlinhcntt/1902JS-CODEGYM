@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  Nhập vào các phần tử cho Mảng cho tới khi gặp "-1" thì dừng (Lưu ý: "-1" ko được thêm vào mảng)
+    Cách 1: 
+    let arr = [];
+    let x; ------Gán x ra ngoài vòng lặp
+
+    for(let i=0; x!=-1; i++){
+        x = +prompt("Nhap vao phan tu thu " +i); (----x cũ được thay bằng giá trị nhập----)
+        arr.push(x)
+    }
+
+    for(let i=0; i<arr.length; i++){
+        document.write(arr[i] +"<br>")
+    }
+    -->
+    <!-- Cách 1 -->
+    <script>
+    let arr = [];
+    let x; 
+    for(let i=0;; i++){ 
+        // Nhập x
+        x = +prompt("Nhap vao phan tu thu " +i); 
+        // Chạy điều kiện so sánh x với -1, nếu = -1 thì kết thúc vòng lặp
+        if(x==-1){
+            break;
+        }
+        // Nếu khác -1, thêm x vào làm phần tử cho mảng
+        arr.push(x)
+    }
+    for(let i=0; i<arr.length; i++){
+        document.write(arr[i] +"<br>")
+    }
+    </script>
+</body>
+</html>

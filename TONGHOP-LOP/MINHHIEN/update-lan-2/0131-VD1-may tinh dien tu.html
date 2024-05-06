@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="scr">
+    <br>
+    <button onclick="nhap('1')">1</button>
+    <button onclick="nhap('2')">2</button>
+    <button onclick="nhap('3')">3</button>
+    <button onclick="nhap('4')">4</button>
+    <button onclick="nhap('5')">5</button>
+    <button onclick="nhap('6')">6</button>
+    <br>
+    <button onclick="nhap('+')">+</button>
+    <button onclick="nhap('-')">-</button>
+    <button onclick="nhap('*')">*</button>
+    <button onclick="nhap('/')">/</button>
+    <br> 
+    <button onclick="tinh()">Result</button>
+    <button onclick="reset()">Reset</button>
+   
+
+<script>
+    function nhap(kt){
+        document.getElementById('scr').value += kt
+    }
+    function reset() {
+        document.getElementById('scr'). value=""
+    }
+    function tinh(){
+        // Lấy giá trị tính toán gán bằng "bt".
+        // in ra KQ của giá trị tính toán bằng eval.
+        let bt=document.getElementById('scr'). value; 
+        document.getElementById('scr'). value= eval(bt)
+        }
+</script>
+
+</body>
+</html>

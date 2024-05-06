@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- tim so max thu 2 trong cac gia tri cua 1 Mang bat ky -->
+    <script>
+        let xyz=[5,6,5,4,7,3,2];
+        let max = xyz[0];
+        for(i=0; i<xyz.length;i++){
+            if(xyz[i]>max){
+                max=xyz[i]
+            }
+        }
+        let max2 = -999;
+        for (let i = 0; i < xyz.length; i++) {
+            
+            // can so sanh gia tri nao voi gia tri let thi phai ghi truoc
+        if (xyz[i] > max2 && xyz[i] < max) {
+          max2 = xyz[i];
+        }
+      }
+      document.write("Max 2 là" + " " + max2);
+    </script>
+</body>
+</html>

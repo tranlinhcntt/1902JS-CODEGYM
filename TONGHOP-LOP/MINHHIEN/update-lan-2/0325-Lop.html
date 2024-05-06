@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script> -->
+        class student {
+            constructor(x, y, z){
+                this.name = x;
+                this.age = y;
+                this.gender = z;
+
+            }
+            f1(){
+                alert(this.name + "," +this.age +"," +this.gender);
+            }
+        }
+
+        let s1= new student("Hien", 23, female);
+        let s2= new student("Hieu", 19, male);
+        s1.f1();
+        s2.f1();
+    <!-- </script> -->
+
+
+    <!-- Tao lop san pham : id, name, price, qty va ham getinf() de hien thong tin sp
+    Va tao ra 1 doi tuong tu lop do. -->
+
+    <script>
+        class product {
+            constructor(x, y, z, h){
+                this.id = x;
+                this.name = y;
+                this.price = z;
+                this.qty = h
+
+            }
+            f1(){
+                alert(this.id + "," +this.name +"," +this.price +"," +this.qty);
+            }
+        }
+
+        let s1= new product("001", "Ip", 22, 1);
+        let s2= new product("002", "Samsung", 20, 2);
+        s1.f1();
+        s2.f1();
+    </script>
+</body>
+</html>

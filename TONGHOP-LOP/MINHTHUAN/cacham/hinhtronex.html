@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function tinhDienTich() {
+            let banKinh = document.getElementById("banKinh").value;
+            let banKinhSo = parseFloat(banKinh);
+            let dienTich = 3.14 * banKinhSo * banKinhSo;
+            document.getElementById("ketQuaDienTich").innerHTML = "Diện tích của hình tròn là: " + dienTich.toFixed(2);
+        }
+
+        function tinhChuVi() {
+            let banKinh = document.getElementById("banKinh").value;
+            let banKinhSo = parseFloat(banKinh);
+            let chuVi = 2 * 3.14 * banKinhSo;
+            document.getElementById("ketQuaChuVi").innerHTML = "Chu vi của hình tròn là: " + chuVi.toFixed(2);
+        }
+    </script>
+</body>
+
+</html>
