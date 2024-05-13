@@ -39,10 +39,12 @@ let b = listProdouct.filter(y=>y.price < 100)
 console.log(b);
 
 //4 sử dụng map tính tổng tiền hàng sẽ có nếu bán hết toàn bộ sản phẩm 
-listProdouct.map((sum) => {
-    console.log(sum.price * sum.quantity)
+let sum = 0;
+listProdouct.map((e) => {
+    sum += e.price * e.quantity;
+    console.log(sum)
 })
 // 5 sử dụng reduce, tính tổng tiền hàng sẽ có nếu bán hết toàn bộ sản phẩm
 
-let t= listProdouct.reduce((xy, sum1) => xy + (sum1.price * sum1.quantity),0);
+let t= listProdouct.reduce((xy, sum1) => xy + sum1.price * sum1.quantity ,0);
 console.log(t);

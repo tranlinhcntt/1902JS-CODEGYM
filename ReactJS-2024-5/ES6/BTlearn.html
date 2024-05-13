@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let danhSachDongVat = []
+
+let themDongVat= (ten, loai, moTa) => {
+    let dongVatMoi = {
+        ten: ten,
+        loai: loai,
+        moTa: moTa
+    }
+    danhSachDongVat.push(dongVatMoi);
+
+} 
+themDongVat("A", "Thú" , "Thú săn mồi ")
+themDongVat("N" , "Thú " , "Thú ăn cỏ")
+console.log(danhSachDongVat)
+
+danhSachDongVat.map(x => {   
+    let a = prompt('nhập Động Vật cần tìm')
+    if(a == x.ten) {
+        console.log('đã có trong danh sách')
+    } else {
+        console.log('Chưa có trong danh sách')
+    }
+})
+
+let xoaDongVat = (ten) => {
+    let viTri = danhSachDongVat.findIndex((D) => D.ten.toLowerCase() == ten.toLowerCase())
+    if(viTri !== -1 ) {
+        danhSachDongVat.splice(viTri, 1 )
+        console.log('Đã xóa khỏi danh sách ')
+    }else {
+
+        console.log(' không tòn tại trong danh sách ');
+
+    } 
+        
+    }
+
+</script>
+</html>

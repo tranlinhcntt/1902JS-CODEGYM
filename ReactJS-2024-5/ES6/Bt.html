@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
-</body>
-<script>
-    function timMax(a,b,c) {
-        let max = a ;
-        if(max < b) {
-            max = b;
-        }
+  </head>
+  <body></body>
+  <script>
+    function timMax(a, b, c) {
+      let max = a;
+      if (b > max) {
+        max = b;
+      }
+      if (c > max) {
+        max = c;
+      }
+      return max;
     }
-</script>
+
+    let timMax2 = (a,b,c ) => {
+        let max = a;
+      if (b > max) {
+        max = b;
+      }
+      if (c > max) {
+        max = c;
+      }
+      return max;
+    }
+
+  </script>
 </html>
