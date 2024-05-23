@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Thêm đối tượng vào mảng</h1>
+    <form id="inputform">
+        <label for="name">Tên:</label>
+        <input type="text" id="name" ><br>
+        <label for="age">Tuổi:</label>
+        <input type="text" id="age" > <br>
+        <label for="score">Điểm: </label>
+        <input type="text" name="" id="score"> <br>
+        <button onclick="addObj()">Thêm vào mảng</button>
+    </form>
+    <h2>Trả Kết quả</h2>
+    <pre id="kq"></pre>
+</body>
+<script>
+    let obj = [
+        {
+            name: 'linh',
+            age: 10,
+            score: 2
+        },
+        {
+            name: 'linh1',
+            age: 120,
+            score: 21
+        }
+    ]
+
+    function addObj() {
+        let name = document.getElementById('name').value;
+        let age = document.getElementById('age').value;
+        let score = document.getElementById('score').value;
+
+            // tạo đối tượng mới 
+
+        let newObj = {
+            name: name,
+            age: parseInt(age),
+            score: parseInt(score)
+        }
+        obj.push(newObj)
+
+        // hiển thị mảng mới trên html 
+        document.getElementById('kq').textContent = JSON.stringify(obj,null,2)
+
+        // let kqElement = document.getElementById('kq')
+        // kqElement.innerHTML = '' // xóa đi nội dung hiện tại của phần tử 
+        // for( let i = 0; i< obj.length; i++) {
+        //     let per = obj[i]
+        //     let perInfo = 'name' + per.name + 'age:' + per.age + 'score:' 
+        //     kqElement.innerHTML += perInfo
+        // }
+    }
+</script>
+</html>

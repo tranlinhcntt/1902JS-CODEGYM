@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"></script>
+</head>
+<body>
+    <script>
+        // axios.get('https://api-kent.netlify.app/.netlify/functions/api/vn').then((result) => {
+        //     // console.log(result.data.detail)
+        //     let list = result.data;
+        //  
+        // })
+
+        // in ra top 3 tỉnh có cases cao nhất
+        axios.get('https://api-kent.netlify.app/.netlify/functions/api/vn')
+  .then((result) => {
+    let data = result.data.detail;
+    
+
+
+
+    // sắp xếp dữ liệu từ cao đến thấp 
+    data.sort((a, b) => b.cases > a.cases);
+  })
+
+    </script>
+</body>
+</html>

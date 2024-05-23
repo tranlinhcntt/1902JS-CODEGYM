@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"></script>
+  </head>
+  <body>
+    <input type="text" id="s" />
+    <button id="kq" onclick="search()">Tìm</button>
+    <h1>Danh sách quốc gia</h1>
+    <div id="list">
+        <div id="item"></div>
+        <span>name</span>
+        <span>area</span>
+        <span>population</span>
+    </div>
+   
+
+    <script>
+      //0. Hiện danh sách quốc gia lên trang web: flag (hiện dạng ảnh, w: 50px), name, area, popullation.
+      // Mỗi quốc gia trên 1 thẻ p.
+      //   1. Tìm quốc gia có area lớn nhất.
+      //   2. Tìm quốc gia có population lớn nhất.
+      //   3. Xây dựng chức năng có ô input, button. Nhập từ khóa vào ô input, ấn nút, in ra danh sách quốc gia trong tên có chứa từ khóa.
+
+      axios
+        .get("https://restcountries.com/v3.1/all?fields=name,area,population,flags").then((result) => {
+          let list = result.data;
+          let str = ``;
+          let maxArea = list[0]
+          let maxPopulation =  list[0]
+          //   for( let i=0; i < data.length; i++) 
+          list.map(item => {
+            str += `<div><img style='width: 50px' src='${item.flags.png}'> ${item.name.common}, ${item.area}, ${item.population}</div>`;
+            if(item.area > maxArea.area) {
+                maxArea =  item
+            }
+            if(item.population > maxPopulation.population) {
+                maxPopulation = item
+            }
+          });
+          document.getElementById("list").innerHTML = str;
+          document.getElementById('maxArea').innerHTML = maxArea.name.common + "," + maxArea.area;
+          document.getElementById('maxPopulation').innerHTML = maxPopulation.name.common + "," + maxPopulation;
+        });
+
+
+
+        // 3 ; 
+        function search() {
+            let key = document.getElementById('s').value
+            axios
+        .get("https://restcountries.com/v3.1/all?fields=name,area,population,flags").then((result) => {
+          let list = result.data;
+          let str = ``;
+          list.map((item) => {
+            if(item.name.common.includes(key)) {
+                str += `<div><img style='width: 50px' src='${item.flags.png}'> ${item.name.common}, ${item.area}, ${item.pupulation}</div>`;
+            }
+            
+          });
+          document.getElementById("list").innerHTML = str;
+        })
+    }
+    </script>
+  </body>
+</html>

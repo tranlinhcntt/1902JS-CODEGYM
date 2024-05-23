@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>Danh sách quốc gia </h1>
+    <p  id="kq"></p>
+
+    <script>
+               axios.get('https://restcountries.com/v3.1/all?fields=name,area,population,flags')
+        .then((result) => {
+          // let data = result.data.detail;
+        //   console.log(result.data);
+          let data = result.data
+          for( let i=0; i < data.length; i++) {
+            data = data[i]
+            document.getElementById('kq').innerHTML = data
+            console.log(data[i])
+          }
+
+    //0. Hiện danh sách quốc gia lên trang web: flag (hiện dạng ảnh, w: 50px), name, area, popullation. 
+    // Mỗi quốc gia trên 1 thẻ p.
+    //   1. Tìm quốc gia có area lớn nhất.
+    //   2. Tìm quốc gia có population lớn nhất.
+    //   3. Xây dựng chức năng có ô input, button. Nhập từ khóa vào ô input, ấn nút, in ra danh sách quốc gia trong tên có chứa từ khóa.
+        
+    //0. 
+
+
+})
+
+
+    </script>
+  </body>
+</html>
